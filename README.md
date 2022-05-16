@@ -1,2 +1,2 @@
 # DragonArchiver
-This is a work in progress project I am doing for myself and improving my understanding of desktop development. I may do this in c# but I've not left anything off the table for the time being.
+This project is still in the early design phase of choices to be made. Currently I am still deciding on many of the core design choices for the project.
