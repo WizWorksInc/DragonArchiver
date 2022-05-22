@@ -42,14 +42,14 @@ jobs:
 
     - name: Restore NuGet packages
       shell: pwsh
-      run: dotnet restore src/MAUI/MauiDemo/MauiDemo.csproj --configfile src/MAUI/NuGet.Config
+      run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj --configfile DragonArchiver.Core/NuGet.Config
       env:
         TELERIK_USERNAME: ${{ secrets.MyTelerikAccountUsername }}
         TELERIK_PASSWORD: ${{ secrets.MyTelerikAccountPassword }}  
 
     - name: Build Maui Android project
       shell: pwsh
-      run: dotnet build src/MAUI/MauiDemo/MauiDemo.csproj -c Debug -f net6.0-android --no-restore
+      run: dotnet build DragonArchiver.Core/DragonArchiver.Core.csproj -c Debug -f net6.0-android --no-restore
     
     # - name: Upload build artifacts
     #   uses: actions/upload-artifact@v2
@@ -93,7 +93,7 @@ jobs:
 
     - name: Restore NuGet packages
       shell: pwsh
-      run: dotnet restore src/MAUI/MauiDemo/MauiDemo.csproj --configfile src/MAUI/NuGet.Config --runtime win10-x64
+      run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj --configfile DragonArchiver.Core/DragonArchiver.Core/NuGet.Config --runtime win10-x64
       env:
         TELERIK_USERNAME: ${{ secrets.MyTelerikAccountUsername }}
         TELERIK_PASSWORD: ${{ secrets.MyTelerikAccountPassword }}
@@ -102,7 +102,7 @@ jobs:
       shell: pwsh
       run: |
         # On Windows, we use msbuild instead of dotnet build
-        msbuild src/MAUI/MauiDemo/MauiDemo.csproj -r -p:Configuration=Debug -p:TargetFramework=net6.0-windows10.0.19041 /p:RuntimeIdentifier="win10-x64"
+        msbuild DragonArchiver.Core/DragonArchiver.Core.csproj -r -p:Configuration=Debug -p:TargetFramework=net6.0-windows10.0.19041 /p:RuntimeIdentifier="win10-x64"
     
     # - name: Upload build artifacts
     #   uses: actions/upload-artifact@v2
@@ -150,14 +150,14 @@ jobs:
 
     - name: Restore NuGet packages
       shell: bash
-      run: dotnet restore src/MAUI/MauiDemo/MauiDemo.csproj --configfile src/MAUI/NuGet.Config
+      run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj --configfile DragonArchiver.Core/DragonArchiver.Core/NuGet.Config
       env:
         TELERIK_USERNAME: ${{ secrets.MyTelerikAccountUsername }}
         TELERIK_PASSWORD: ${{ secrets.MyTelerikAccountPassword }}
     
     - name: Build MAUI iOS project
       shell: bash
-      run: dotnet build src/MAUI/MauiDemo/MauiDemo.csproj -c Debug -f net6.0-ios --no-restore
+      run: dotnet build DragonArchiver.Core/DragonArchiver.Core.csproj -c Debug -f net6.0-ios --no-restore
     
     # - name: Upload iOS build artifacts
     #   uses: actions/upload-artifact@v2
@@ -205,14 +205,14 @@ jobs:
 
     - name: Restore NuGet packages
       shell: bash
-      run: dotnet restore src/MAUI/MauiDemo/MauiDemo.csproj --configfile src/MAUI/NuGet.Config
+      run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj --configfile DragonArchiver.Core/DragonArchiver.Core/NuGet.Config
       env:
         TELERIK_USERNAME: ${{ secrets.MyTelerikAccountUsername }}
         TELERIK_PASSWORD: ${{ secrets.MyTelerikAccountPassword }}
     
     - name: Build MAUI MacCatalyst project
       shell: bash
-      run: dotnet build src/MAUI/MauiDemo/MauiDemo.csproj -c Debug -f net6.0-maccatalyst --no-restore
+      run: dotnet build DragonArchiver.Core/DragonArchiver.Core.csproj -c Debug -f net6.0-maccatalyst --no-restore
     
     # - name: Upload iOS build artifacts
     #   uses: actions/upload-artifact@v2
