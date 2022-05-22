@@ -5,11 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '**.cs'
-      - '**.csproj'
-      - '**.sln'
-      - '**.git**'
-      - '**.yml'
+      - '**/*'
       - '.github/workflows/build.yml'
 
 jobs:
