@@ -42,8 +42,8 @@ jobs:
         run: |
           dotnet workload install android --ignore-failed-sources
           dotnet workload install maui --ignore-failed-sources
-      #- name: Restore Dependencies
-        #run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
+      - name: Restore Dependencies
+        run: dotnet restore
 
       - name: Build MAUI Android
         run: dotnet build DragonArchiver.Core/DragonArchiver.Core.csproj -c Release -f net6.0-android --no-restore
