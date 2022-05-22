@@ -42,8 +42,8 @@ jobs:
         run: |
           dotnet workload install android --ignore-failed-sources
           dotnet workload install maui --ignore-failed-sources
-      - name: Restore Dependencies
-        run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
+      #- name: Restore Dependencies
+        #run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
 
       - name: Build MAUI Android
         run: dotnet build DragonArchiver.Core/DragonArchiver.Core.csproj -c Release -f net6.0-android --no-restore
@@ -76,8 +76,8 @@ jobs:
       - name: Install MAUI Workloads
         run: |
           dotnet workload install maui --ignore-failed-sources
-      - name: Restore Dependencies
-        run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
+      #- name: Restore Dependencies
+        #run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
 
       - name: Build MAUI Windows
         run: msbuild DragonArchiver.Core/DragonArchiver.Core.csproj -r -p:Configuration=Release -p:RestorePackages=false -p:TargetFramework=net6.0-windows10.0.19041 /p:GenerateAppxPackageOnBuild=true
@@ -106,8 +106,8 @@ jobs:
         run: |
           dotnet workload install ios --ignore-failed-sources
           dotnet workload install maui --ignore-failed-sources
-      - name: Restore Dependencies
-        run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
+      #- name: Restore Dependencies
+        #run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
 
       - name: Build MAUI iOS
         run: dotnet build DragonArchiver.Core/DragonArchiver.Core.csproj -c Release -f net6.0-ios --no-restore
@@ -136,8 +136,8 @@ jobs:
         run: |
           dotnet workload install maccatalyst --ignore-failed-sources
           dotnet workload install maui --ignore-failed-sources
-      - name: Restore Dependencies
-        run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
+      #- name: Restore Dependencies
+        #run: dotnet restore DragonArchiver.Core/DragonArchiver.Core.csproj
 
       - name: Build MAUI MacCatalyst
         run: dotnet build DragonArchiver.Core/DragonArchiver.Core.csproj -c Release -f net6.0-maccatalyst --no-restore
