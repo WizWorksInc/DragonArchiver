@@ -1,4 +1,4 @@
-Name: Build MAUI Project
+name: Build MAUI Project
 
 on:
   push:
