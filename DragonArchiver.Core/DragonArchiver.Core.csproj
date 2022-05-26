@@ -15,7 +15,7 @@
 		<ApplicationTitle>DragonArchiver.Core</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.dragonarchiver.core</ApplicationId>
+		<ApplicationId>co.wizworks.dragonarchiver.core</ApplicationId>
 		<ApplicationIdGuid>48849E8D-412E-445C-9CBD-54632800D1EE</ApplicationIdGuid>
 
 		<!-- Versions -->
@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Folder Include="Model\PlayerClasses\" />
 	  <Folder Include="ViewModel\" />
 	  <Folder Include="View\" />
 	</ItemGroup>

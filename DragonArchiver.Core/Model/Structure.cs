@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DragonArchiver.Core.Model
 {
-    internal interface INonPlayerCharacter
+    internal abstract class Structure
     {
     }
 }

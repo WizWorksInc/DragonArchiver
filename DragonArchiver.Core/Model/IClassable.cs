@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DragonArchiver.Core.Model
 {
-    internal interface ILocation
+    internal interface IClassable
     {
+        
     }
 }

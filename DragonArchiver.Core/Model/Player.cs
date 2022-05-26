@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DragonArchiver.Core.Model
 {
-    internal class NPC : Creature, ILocations
+    internal class Player : Creature, ILocations, IClassable
     {
         public override string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
