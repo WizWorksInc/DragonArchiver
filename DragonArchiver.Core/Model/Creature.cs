@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DragonArchiver.Core.Model
+﻿namespace DragonArchiver.Core.Model
 {
     internal abstract class Creature
     {
@@ -14,7 +8,7 @@ namespace DragonArchiver.Core.Model
         public abstract object Size { get; set; }
         public abstract object Alignment { get; set; }
         public abstract Dictionary<string, ushort> Stats { get; set; }
-        public abstract ushort Speed { get; set; } // freakin mist making me have to use short >.<
+        public abstract ushort Speed { get; set; } // cat go nyoooom
         public abstract ushort HP { get; set; } // Health Points
         // TODO: Look into ac more as the data type may have to change at a later date
         public abstract byte AC { get; set; } // Armour Class
