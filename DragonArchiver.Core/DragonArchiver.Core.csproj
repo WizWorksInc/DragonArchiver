@@ -65,7 +65,9 @@
 	  <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
 	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
 	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+	  <PackageReference Include="RestSharp" Version="107.3.0" />
 	  <PackageReference Include="Serilog" Version="2.11.0" />
+	  <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
 	  <PackageReference Include="System.Threading.Channels" Version="6.0.0" />
 	  <PackageReference Include="YamlDotNet" Version="11.2.1" />
 	</ItemGroup>
