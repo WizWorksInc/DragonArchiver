@@ -12,7 +12,7 @@
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <ListView ItemsSource="">
+            <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:ItemsModel">
                         <ViewCell>
@@ -28,18 +28,9 @@
                                 <Label Grid.Column="1"
                                        Text="{Binding Name}"
                                        FontAttributes="Bold" />
-                                <Label Grid.Column="1"
-                                       Text="{Binding Type}"
-                                       FontAttributes="Bold" />
-                                <Label Grid.Column="1"
-                                       Text="{Binding Description}"
-                                       FontAttributes="Bold" />
-                                <Label Grid.Column="1"
-                                       Text="{Binding Rarity}"
-                                       FontAttributes="Bold" />
                                 <Label Grid.Row="1"
                                        Grid.Column="1"
-                                       Text="{Binding RequiresAttunement}"
+                                       Text="test"
                                        FontAttributes="Italic"
                                        VerticalOptions="End" />
                             </Grid>
