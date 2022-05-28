@@ -12,7 +12,7 @@ public class Item
         Slug = slug;
         Name = name;
         Type = type;
-        Desc = desc;
+        Description = desc;
         Rarity = rarity;
         RequiresAttunement = requiresAttunement;
         DocumentSlug = documentSlug;
@@ -22,7 +22,7 @@ public class Item
     public string Slug { get; set; }
     public string Name { get; set; }
     public string Type { get; set; }
-    public string Desc { get; set; }
+    public string Description { get; set; }
     public string Rarity { get; set; }
     public string RequiresAttunement { get; set; }
     public string DocumentSlug { get; set; }
