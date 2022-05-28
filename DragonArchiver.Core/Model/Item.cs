@@ -7,6 +7,19 @@ namespace DragonArchiver.Core.Model;
 /// </summary>
 public class Item
 {
+    // TODO: Delete this later it is here only for testing purposes.
+    public Item()
+    {
+        Slug = "slug";
+        Name = "name";
+        Type = "type";
+        Description = "desc";
+        Rarity = "rare";
+        RequiresAttunement = "attune";
+        DocumentSlug = "docslug";
+        DocumentTitle = "doctitle";
+    }
+
     public Item(string slug, string name, string type, string desc, string rarity, string requiresAttunement, string documentSlug, string documentTitle)
     {
         Slug = slug;

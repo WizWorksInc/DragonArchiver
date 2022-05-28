@@ -5,6 +5,9 @@
              xmlns:viewmodel="clr-namespace:DragonArchiver.Core.ViewModel"
              x:Class="DragonArchiver.Core.View.MainPage"
              x:DataType="viewmodel:ItemsViewModel">
+    <ContentPage.Resources>
+        <model:ItemList x:Key="ItemListData"/>
+    </ContentPage.Resources>
 			 
     <ScrollView>
         <VerticalStackLayout 
@@ -12,9 +15,13 @@
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <ListView>
+            <ListView Width="200"
+                     ItemsSource="{Binding Source={StaticResource ItemListData}}"
+                     ItemTemplate="{StaticResource ItemItemTemplate}"/>
+
+            <!--<ListView>
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="model:ItemsModel">
+                    <DataTemplate x:DataType="model:ItemList">
                         <ViewCell>
                             <Grid Padding="10">
                                 <Grid.RowDefinitions>
@@ -38,9 +45,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
 				<ListView.BindingContext>
-					<model:ItemsModel/>
+					<model:ItemList/>
 				</ListView.BindingContext>
-            </ListView>
+            </ListView>-->
+
+
+
 
 
         </VerticalStackLayout>

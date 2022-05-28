@@ -3,7 +3,7 @@
     x:Class="DragonArchiver.Core.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:DragonArchiver.Core"
+    xmlns:local="clr-namespace:DragonArchiver.Core.View"
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
