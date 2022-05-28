@@ -4,7 +4,7 @@
              xmlns:model="clr-namespace:DragonArchiver.Core.Model"
              xmlns:viewmodel="clr-namespace:DragonArchiver.Core.ViewModel"
              x:Class="DragonArchiver.Core.View.MainPage"
-             xDataType="viewmodel:ItemsViewModel">
+             x:DataType="viewmodel:ItemsViewModel">
 			 
     <ScrollView>
         <VerticalStackLayout 

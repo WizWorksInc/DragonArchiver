@@ -7,7 +7,7 @@ namespace DragonArchiver.Core.Model
     /// An Asynchronous class for deserializing and serializing Items.
     /// </summary>
     internal class ItemDeserializerSerializerAsync
-    {
+    {// TODO: Work on this class later for handling the api we will be using
         /// <summary>
         /// Deserialize the path-ed JSON file and convert it into a list of Items.
         /// </summary>
@@ -15,7 +15,7 @@ namespace DragonArchiver.Core.Model
         /// <returns>List&lt;Item&gt;</returns>
         public async Task<List<Item>> Deserialize(string path)
         {
-            try
+            try 
             {
                 // Prep ourselves for parsing our JSON file
                 var json = await File.ReadAllTextAsync(path);

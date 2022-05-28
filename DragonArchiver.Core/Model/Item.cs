@@ -5,7 +5,7 @@ namespace DragonArchiver.Core.Model;
 /// <summary>
 /// An object representation of an Item in Dungeons and Dragons.
 /// </summary>
-internal class Item
+public class Item
 {
     public Item(string slug, string name, string type, string desc, string rarity, string requiresAttunement, string documentSlug, string documentTitle)
     {
