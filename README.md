@@ -22,3 +22,5 @@ See [CONTRIBUTING](CONTRIBUTING.md), [CODE-OF-CONDUCT](CODE_OF_CONDUCT.md) and t
 All code for the content repository is licensed under [GPL-3.0](https://github.com/WizWorksInc/DragonArchiver/blob/main/LICENSE).
 
 Some assets may have different licensing. Check to see if a local license is present to validate.
+
+
