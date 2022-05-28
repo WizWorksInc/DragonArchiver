@@ -5,8 +5,8 @@ namespace DragonArchiver.Core.Services;
 public class ItemService
 {
     List<Item> itemList = new();
-    public async Task<List<Item>> GetItems()
+    public Task<List<Item>> GetItems()
     {
-        return itemList;
+        return Task.FromResult(itemList);
     }
 }
