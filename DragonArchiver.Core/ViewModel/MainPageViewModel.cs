@@ -4,7 +4,7 @@ using Serilog;
 
 namespace DragonArchiver.Core.ViewModel;
 
-public partial class MainPageViewModel :ObservableObject
+public partial class MainPageViewModel : ObservableObject
 {
     [ObservableProperty] private string _name;
     [ObservableProperty] private string _type;
@@ -15,7 +15,7 @@ public partial class MainPageViewModel :ObservableObject
     }
 
     [ICommand]
-    private void populate()
+    private void Populate()
     {
         try
         {

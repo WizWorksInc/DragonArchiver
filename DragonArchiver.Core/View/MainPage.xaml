@@ -14,7 +14,7 @@
 
             <ListView ItemsSource="">
                 <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="model:Item">
+                    <DataTemplate x:DataType="model:ItemsModel">
                         <ViewCell>
                             <Grid Padding="10">
                                 <Grid.RowDefinitions>
@@ -43,7 +43,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
 				<ListView.BindingContext>
-					<Model:Item/>
+					<model:ItemsModel/>
 				</ListView.BindingContext>
             </ListView>
 
