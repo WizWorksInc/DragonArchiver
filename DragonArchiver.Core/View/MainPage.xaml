@@ -25,17 +25,21 @@
                                     <ColumnDefinition Width="Auto" />
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2"
-                                       Source="{Binding Name}"
-                                       Aspect="AspectFill"
-                                       HeightRequest="60"
-                                       WidthRequest="60" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding Name}"
+                                       FontAttributes="Bold" />
                                 <Label Grid.Column="1"
                                        Text="{Binding Type}"
                                        FontAttributes="Bold" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding Description}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding Rarity}"
+                                       FontAttributes="Bold" />
                                 <Label Grid.Row="1"
                                        Grid.Column="1"
-                                       Text="{Binding Rarity}"
+                                       Text="{Binding RequiresAttunement}"
                                        FontAttributes="Italic"
                                        VerticalOptions="End" />
                             </Grid>
