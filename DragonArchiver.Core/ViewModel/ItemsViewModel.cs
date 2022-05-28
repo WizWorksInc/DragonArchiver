@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DragonArchiver.Core.Model
+namespace DragonArchiver.Core.ViewModel
 {
-    internal interface IPlayer
+    public partial class ItemsViewModel
     {
     }
 }

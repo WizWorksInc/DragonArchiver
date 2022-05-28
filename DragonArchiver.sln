@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonArchiver.Core", "DragonArchiver.Core\DragonArchiver.Core.csproj", "{A07A0449-5B24-4978-B311-692DD1D0AE22}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonArchiver.Utilities", "DragonArchiver.Utilities\DragonArchiver.Utilities.csproj", "{81B4FB95-B2A5-4335-9C3F-1A81C8BF637B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonArchiver.UnitTests", "DragonArchiver.UnitTests\DragonArchiver.UnitTests.csproj", "{45DC50A4-1B57-48FA-8E1A-EA11415140D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{81B4FB95-B2A5-4335-9C3F-1A81C8BF637B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81B4FB95-B2A5-4335-9C3F-1A81C8BF637B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81B4FB95-B2A5-4335-9C3F-1A81C8BF637B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81B4FB95-B2A5-4335-9C3F-1A81C8BF637B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45DC50A4-1B57-48FA-8E1A-EA11415140D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DC50A4-1B57-48FA-8E1A-EA11415140D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DC50A4-1B57-48FA-8E1A-EA11415140D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DC50A4-1B57-48FA-8E1A-EA11415140D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
