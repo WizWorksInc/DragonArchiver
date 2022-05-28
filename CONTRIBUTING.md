@@ -1,5 +1,7 @@
 # Contributing
 
+> Currently this project is still very early development and as such we are somewhat relaxed with how you contribute but consider this document as a guide in how to best contribute. 
+
 When contributing to this repository, please first discuss the change you wish to make via issue,
 email, or any other method with the owners of this repository before making a change. 
 
