@@ -1,6 +1,8 @@
 <!--- 
 Information on the advantages of user stories:
 https://www.mountaingoatsoftware.com/blog/advantages-of-the-as-a-user-i-want-user-story-template
+
+Not everything here is required just a suggested template to follow.
 --->
 [
 The user story should have a reason to exist: what do I need as the user described in the summary?
