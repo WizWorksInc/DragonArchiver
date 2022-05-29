@@ -7,6 +7,17 @@ email, or any other method with the owners of this repository before making a ch
 
 Please note we have a code of conduct, please follow it in all your interactions with the project.
 
+## Forking Project
+All contributions must start with a fork of the repository. So please fork the project before continuing!
+
+## Building Project
+
+1. Clone this repo.
+2. Run `RUN_THIS.py` to init submodules.
+3. Compile the solution.
+
+
+
 ## Pull Request Process
 
 1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
