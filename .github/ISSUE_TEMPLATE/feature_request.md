@@ -1,20 +1,37 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+<!--- 
+Information on the advantages of user stories:
+https://www.mountaingoatsoftware.com/blog/advantages-of-the-as-a-user-i-want-user-story-template
+--->
+[
+The user story should have a reason to exist: what do I need as the user described in the summary?
+This part details any detail that could not be passed by the summary.
+]
 
----
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+### Acceptance Criteria
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+1. [If I do A.]
+1. [B should happen.]
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+[
+Also, here are a few points that need to be addressed:
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+1. Constraint 1;
+1. Constraint 2;
+1. Constraint 3.
+]
+
+
+### Resources:
+
+* Mockups: [Here goes a URL to or the name of the mockup(s) in inVision];
+* Testing URL: [Here goes a URL to the testing branch or IP];
+* Staging URL: [Here goes a URL to the feature on staging];
+
+
+### Notes
+
+[Some complementary notes if necessary:]
+
+* > Here goes a quote from an email
+* Here goes whatever useful information can exist…
