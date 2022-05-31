@@ -13,6 +13,7 @@ If you need any help on the topic, please join our discord and ask questions!
 - Do what the Boy Scouts do when you are working on code. Leave it better than you found it!
 - Documenting your code is essential, but it is detrimental to document. If the code does not make logical sense, it may need documentation!
 - We follow the Clean Code Philosophy, and you should too! When naming variables or writing code, what is happening should make logical sense from just a glance. So name your variables robustly and write code that is easy to read!
+- Please have meaningful commit names when possible.
 - If you ever are lost or confused, don't be afraid to ask for help!
 
 > These guidelines are primarily suggestions, not requirements, but failure to follow the guidelines could lead to your Pull Request getting declined or asked for changes. So generally, it is in your best interest to follow these guidelines to the best of your ability!
