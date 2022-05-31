@@ -22,3 +22,8 @@ If you need any help on the topic feel free to join our discord and ask question
 2. Clone your forked repository.
 3. Run `RUN_THIS.py` to init submodules.
 4. Compile the solution.
+
+
+## How does MVVM Work?
+
+WIP
