@@ -38,10 +38,10 @@ jobs:
           & dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
             
       - name: Restore nuget packages
-        run: dotnet restore
+        run: dotnet restore DragonArchiver.Core
 
       - name: Build Dragon Archiver
         shell: pwsh
-        run: dotnet build -f net6.0-android -c Debug
+        run: dotnet build DragonArchiver.Core -f net6.0-android -c Debug
 
     
