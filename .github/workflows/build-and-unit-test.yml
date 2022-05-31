@@ -19,18 +19,18 @@ jobs:
           dotnet-version: "6.0.x"
           include-prerelease: true
 
-      - name: maui-check
-        shell: pwsh
-        run: |
-          & dotnet tool install -g Redth.Net.Maui.Check
-          & maui-check --ci --non-interactive --fix --force-dotnet --skip vswin --skip xcode --skip edgewebview2 --skip androidemulator
-      # - name: install workload
-      #   shell: pwsh
-      #   run: |
-      #     dotnet workload install maui
-      #     dotnet workload install android-aot
-      #     dotnet workload install ios
-      #     dotnet workload install maccatalyst
+      #- name: maui-check
+      #  shell: pwsh
+      #  run: |
+      #    & dotnet tool install -g Redth.Net.Maui.Check
+      #    & maui-check --ci --non-interactive --fix --force-dotnet --skip vswin --skip xcode --skip edgewebview2 --skip androidemulator
+       - name: install workload
+         shell: pwsh
+         run: |
+           dotnet workload install maui
+           dotnet workload install android-aot
+           dotnet workload install ios
+           dotnet workload install maccatalyst
 
       - name: build
         shell: pwsh
