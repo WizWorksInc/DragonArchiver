@@ -1,6 +1,6 @@
 $rootPath = (Get-Item -Path "./" -Verbose).FullName
 
-Get-ChildItem ./src/**/*.sln -recurse | ForEach-Object -Process{
+Get-ChildItem ./*.sln -recurse | ForEach-Object -Process{
 	if($_ -is [System.IO.FileInfo])
 	{
 		$projectPath = $_.Directory
