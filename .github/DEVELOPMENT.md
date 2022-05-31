@@ -5,6 +5,7 @@ Dragon Archiver is built using .Net Maui and closely adheres to the Model-View-V
 If you need any help on the topic, please join our discord and ask questions!
 
 ## Guidelines to Follow
+
 - Always adhere to the Model-View-ViewModel (MVVM) architecture
 - When creating something new, always look that you are following DRY (Don't Repeat Yourself)
 - Remember, KISS, keep it simple stupid!
@@ -22,7 +23,6 @@ If you need any help on the topic, please join our discord and ask questions!
 2. Clone your forked repository.
 3. Run `RUN_THIS.py` to init submodules.
 4. Compile the solution.
-
 
 ## How does MVVM Work?
 
