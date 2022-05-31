@@ -14,7 +14,7 @@ See [CONTRIBUTING](CONTRIBUTING.md), [CODE-OF-CONDUCT](CODE_OF_CONDUCT.md) and t
 
 ## Building
 
-> If you plan to push something to the master please fork the repo before cloning
+> If you plan to contribute to the project please fork the master repo before cloning
 
 1. Clone this repo.
 2. Run `RUN_THIS.py` to init submodules.
