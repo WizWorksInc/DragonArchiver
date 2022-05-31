@@ -10,11 +10,11 @@ on:
   workflow_dispatch:
 
 env:
-    DOTNETVERSION:  6.0.x
+    DOTNETVERSION:  6.0.3xx
     MAUIROLLBACKLINK: https://aka.ms/dotnet/maui/rc.3.json
 jobs:
   buildwindows:
-    runs-on: windows-2022
+    runs-on: windows-latest
     
     steps:
       - uses: actions/checkout@v2
@@ -38,7 +38,7 @@ jobs:
           & dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
             
       - name: Restore nuget packages
-        run: dotnet restore DragonArchiver.sln
+        run: dotnet restore
 
       - name: Build Dragon Archiver
         shell: pwsh
