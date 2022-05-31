@@ -13,6 +13,7 @@ If you need any help on the topic feel free to ask questions!
 - We follow the Clean Code Philosophy and you should too! As such when naming variables or writing code what is happening should make logical sense from just a glance. So name your variables robustly and write code that is easy to read!
 - If you ever are lost or confused don't be afraid to ask for help!
 
+These guidelines are mostly suggestions not requirements but failure to follow the guide lines could lead to your Pull Request getting declined or asked for changes. So generally it is in your best interest to follow these guidelines to the best of your ability!
 
 ## Building
 
