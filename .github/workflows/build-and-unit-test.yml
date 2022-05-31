@@ -11,7 +11,7 @@ on:
 
 env:
     DOTNETVERSION:  6.0.x
-    MAUIROLLBACKLINK: https://aka.ms/dotnet/maui/rc.3.json
+    MAUIROLLBACKLINK: https://aka.ms/dotnet/maui/6.0.312.json
 jobs:
   buildwindows:
     runs-on: windows-latest
