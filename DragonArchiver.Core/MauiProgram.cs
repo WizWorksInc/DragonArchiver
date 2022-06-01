@@ -1,4 +1,6 @@
-﻿namespace DragonArchiver.Core;
+﻿using CommunityToolkit.Maui;
+
+namespace DragonArchiver.Core;
 
 public static class MauiProgram
 {
@@ -12,6 +14,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+		// Initialise the toolkit
+		builder.UseMauiApp<App>().UseMauiCommunityToolkit();
 
 		return builder.Build();
 	}

@@ -9,9 +9,10 @@ public partial class MainPageViewModel : ObservableObject
     [ObservableProperty] private string _name;
     [ObservableProperty] private string _type;
 
-    public MainPageViewModel()
+    public MainPageViewModel(string name, string type)
     {
-        
+	    _name = name;
+	    _type = type;
     }
 
     [ICommand]
