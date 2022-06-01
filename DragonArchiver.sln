@@ -6,6 +6,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonArchiver.Core", "DragonArchiver.Core\DragonArchiver.Core.csproj", "{A07A0449-5B24-4978-B311-692DD1D0AE22}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DragonArchiver.UnitTests", "DragonArchiver.UnitTests\DragonArchiver.UnitTests.csproj", "{45DC50A4-1B57-48FA-8E1A-EA11415140D5}"
+
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,8 +21,6 @@ Global
 		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Test|Any CPU.ActiveCfg = Test|Any CPU
-		{A07A0449-5B24-4978-B311-692DD1D0AE22}.Test|Any CPU.Build.0 = Test|Any CPU
 		{45DC50A4-1B57-48FA-8E1A-EA11415140D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45DC50A4-1B57-48FA-8E1A-EA11415140D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45DC50A4-1B57-48FA-8E1A-EA11415140D5}.Test|Any CPU.ActiveCfg = Test|Any CPU
