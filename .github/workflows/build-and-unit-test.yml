@@ -40,8 +40,12 @@ jobs:
       - name: Restore nuget packages
         run: dotnet restore DragonArchiver.Core
 
-      - name: Build Dragon Archiver
+      - name: Build Dragon Archiver [android]
         shell: pwsh
         run: dotnet build DragonArchiver.Core -f net6.0-android -c Debug
+
+      - name: Build Dragon Archiver [windows]
+        shell: pwsh
+        run: dotnet build DragonArchiver.Core -f net6.0-windows10.0.19041.0 -c Debug
 
     
