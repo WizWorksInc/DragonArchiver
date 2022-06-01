@@ -35,6 +35,7 @@
     <AssemblyFileVersion></AssemblyFileVersion>
     <Version></Version>
     <Configurations>Debug;Release</Configurations>
+    <DefaultLanguage>en</DefaultLanguage>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) != true AND $(TargetFramework.StartsWith('net6.0-ios')) != true AND $(TargetFramework.StartsWith('net6.0-maccatalyst')) != true ">
