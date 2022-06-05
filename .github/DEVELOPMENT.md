@@ -8,7 +8,7 @@ If you need any help on the topic, please join our discord and ask questions!
 
 - Always adhere to the Model-View-ViewModel (MVVM) architecture
 - When creating something new, always look that you are following DRY (Don't Repeat Yourself)
-- Remember, KISS, keep it simple stupid!
+- Remember, KISS, keep it short and simple or the more brash statement of keep it simple stupid!
 - Always aim to avoid coupling your code! We should generally be seeking to decouple whenever possible.
 - Do what the Boy Scouts do when you are working on code. Leave it better than you found it!
 - Documenting your code is essential, but it is detrimental to document. If the code does not make logical sense, it may need documentation!
