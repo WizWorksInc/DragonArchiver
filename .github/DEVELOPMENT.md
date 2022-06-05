@@ -18,6 +18,9 @@ If you need any help on the topic, please join our discord and ask questions!
 
 > These guidelines are primarily suggestions, not requirements, but failure to follow the guidelines could lead to your Pull Request getting declined or asked for changes. So generally, it is in your best interest to follow these guidelines to the best of your ability!
 
+## Setting up .Net MAUI
+WIP
+
 ## Building
 
 1. Fork the `dev` branch as a personal repository.
