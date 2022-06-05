@@ -37,6 +37,10 @@ jobs:
           & dotnet workload install maui --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
           & dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
             
+      - name: Setup Submodule
+        run: |
+          git submodule update --init --recursive
+
       - name: Restore nuget packages
         run: dotnet restore DragonArchiver.Core
 
