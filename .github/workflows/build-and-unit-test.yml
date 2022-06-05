@@ -19,10 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Submodule
-        run: |
-          git submodule update --init --recursive
-
       - name: Restore nuget packages
         run: dotnet restore DragonArchiver.Core
 
