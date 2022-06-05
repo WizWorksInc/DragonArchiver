@@ -19,6 +19,28 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Setup Submodule
+        run: |
+          git submodule update --init --recursive
+
+      - name: Setup .NET Core SDK ${{env.DOTNETVERSION}}
+         uses: actions/setup-dotnet@v1
+         with:
+           dotnet-version: '${{env.DOTNETVERSION}}'
+
+       - name: Add msbuild to PATH
+         uses: microsoft/setup-msbuild@v1.1
+         with:
+           vs-prerelease: true
+
+      - name: Install .NET MAUI
+        shell: pwsh
+        run: |
+          & dotnet --version
+          & dotnet nuget locals all --clear
+          & dotnet workload install maui --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+          & dotnet workload install android ios maccatalyst macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+
       - name: Restore nuget packages
         run: dotnet restore DragonArchiver.Core
 
@@ -51,7 +73,7 @@ jobs:
           & dotnet --version
           & dotnet nuget locals all --clear
           & dotnet workload install maui --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
-          & dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+          & dotnet workload install android ios maccatalyst macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
             
       - name: Restore nuget packages
         run: dotnet restore DragonArchiver.Core
