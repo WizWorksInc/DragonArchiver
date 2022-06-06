@@ -1,5 +1,6 @@
+
 // Root myDeserializedClass = JsonConvert.DeserializeObject<List<Root>>(myJsonResponse);
-    public class Action
+    /*public class Action
     {
         public string name { get; set; }
         public string desc { get; set; }
@@ -98,3 +99,4 @@
         public bool? hover { get; set; }
         public string notes { get; set; }
     }
+*/
