@@ -36,6 +36,59 @@
     <Version></Version>
     <Configurations>Debug;Release</Configurations>
     <DefaultLanguage>en</DefaultLanguage>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AnalysisLevel>preview-minimum</AnalysisLevel>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
+    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
+    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
   </PropertyGroup>
 
   <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) != true AND $(TargetFramework.StartsWith('net6.0-ios')) != true AND $(TargetFramework.StartsWith('net6.0-maccatalyst')) != true ">
@@ -92,6 +145,13 @@
 	  <MauiCss Remove="Model\PlayerClasses\**" />
 	  <MauiXaml Remove="Model\PlayerClasses\**" />
 	  <None Remove="Model\PlayerClasses\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
 	</ItemGroup>
 
 	<ItemGroup>
