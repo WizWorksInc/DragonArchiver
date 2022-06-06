@@ -1,6 +1,6 @@
 ﻿namespace DragonArchiver.Core.Model
 {
-    internal class Npc : Creature, ILocations
+    internal class Npc : Creature, ILocation
     {
         public override string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
