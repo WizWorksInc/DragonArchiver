@@ -1,10 +1,7 @@
 ﻿namespace DragonArchiver.Core.Model
 {
-    internal abstract class Structure : ILocation
+    internal abstract class Structure
     {
-
-        public string? CurrentLocation { get; set; }
-        public string? HomeLocation { get; set; }
 
     }
 }
