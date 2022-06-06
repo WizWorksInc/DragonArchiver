@@ -2,25 +2,25 @@
 {
     public class Action
     {
-        public string name { get; set; }
-        public string desc { get; set; }
-        public int attack_bonus { get; set; }
-        public string damage_dice { get; set; }
-        public int? damage_bonus { get; set; }
+        public string? Name { get; set; }
+        public string? Desc { get; set; }
+        public int AttackBonus { get; set; }
+        public string? DamageDice { get; set; }
+        public int? DamageBonus { get; set; }
     }
 
     public class LegendaryAction
     {
-        public string name { get; set; }
-        public string desc { get; set; }
-        public int attack_bonus { get; set; }
-        public string damage_dice { get; set; }
+        public string? Name { get; set; }
+        public string? Desc { get; set; }
+        public int AttackBonus { get; set; }
+        public string? DamageDice { get; set; }
     }
 
     public class Reaction
     {
-        public string name { get; set; }
-        public string desc { get; set; }
-        public int attack_bonus { get; set; }
+        public string? Name { get; set; }
+        public string? Desc { get; set; }
+        public int AttackBonus { get; set; }
     }
 }

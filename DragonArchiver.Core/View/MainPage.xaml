@@ -5,55 +5,5 @@
              xmlns:viewmodel="clr-namespace:DragonArchiver.Core.ViewModel"
              x:Class="DragonArchiver.Core.View.MainPage"
              x:DataType="viewmodel:ItemsViewModel">
-    <ContentPage.Resources>
-        <model:ItemList x:Key="ItemListData"/>
-    </ContentPage.Resources>
-			 
-    <ScrollView>
-        <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
 
-            <ListView Width="200"
-                     ItemsSource="{Binding Source={StaticResource ItemListData}}"
-                     ItemTemplate="{StaticResource ItemItemTemplate}"/>
-
-            <!--<ListView>
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="model:ItemList">
-                        <ViewCell>
-                            <Grid Padding="10">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Label Grid.Column="1"
-                                       Text="{Binding Name}"
-                                       FontAttributes="Bold" />
-                                <Label Grid.Row="1"
-                                       Grid.Column="1"
-                                       Text="test"
-                                       FontAttributes="Italic"
-                                       VerticalOptions="End" />
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-				<ListView.BindingContext>
-					<model:ItemList/>
-				</ListView.BindingContext>
-            </ListView>-->
-
-
-
-
-
-        </VerticalStackLayout>
-    </ScrollView>
- 
 </ContentPage>

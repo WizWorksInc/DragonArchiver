@@ -1,45 +1,45 @@
-namespace DragonArchiver.Core.Model
+﻿namespace DragonArchiver.Core.Model
 {
     public class Asi
     {
-        public List<string> attributes { get; set; }
-        public int value { get; set; }
+        public List<string>? Attributes { get; set; }
+        public int Value { get; set; }
     }
 
     public class Race
     {
-        public string name { get; set; }
-        public string desc { get; set; }
+        public string? Name { get; set; }
+        public string? Desc { get; set; }
 
         
-        public string AsiDesc { get; set; }
-        public List<Asi> asi { get; set; }
-        public string age { get; set; }
-        public string alignment { get; set; }
-        public string size { get; set; }
-        public Speed speed { get; set; }
+        public string? AsiDesc { get; set; }
+        public List<Asi>? Asi { get; set; }
+        public string? Age { get; set; }
+        public string? Alignment { get; set; }
+        public string? Size { get; set; }
+        public Speed? Speed { get; set; }
 
         
-        public string SpeedDesc { get; set; }
-        public string languages { get; set; }
-        public string vision { get; set; }
-        public string traits { get; set; }
-        public List<Subtype> subtypes { get; set; }
+        public string? SpeedDesc { get; set; }
+        public string? Languages { get; set; }
+        public string? Vision { get; set; }
+        public string? Traits { get; set; }
+        public List<Subtype>? Subtypes { get; set; }
     }
 
     public class Speed
     {
-        public int walk { get; set; }
+        public int Walk { get; set; }
     }
 
     public class Subtype
     {
-        public string name { get; set; }
-        public string desc { get; set; }
+        public string? Name { get; set; }
+        public string? Desc { get; set; }
 
         
-        public string AsiDesc { get; set; }
-        public List<Asi> asi { get; set; }
-        public string traits { get; set; }
+        public string? AsiDesc { get; set; }
+        public List<Asi>? Asi { get; set; }
+        public string? Traits { get; set; }
     }
 }
