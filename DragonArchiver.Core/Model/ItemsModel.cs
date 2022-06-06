@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+﻿/*using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace DragonArchiver.Core.Model;
@@ -19,4 +19,4 @@ public class ItemsModel : ObservableObject
         set => SetProperty(_item.Name, value, _item, (u, n) => u.Name = n);
     }
 
-}
+}*/
