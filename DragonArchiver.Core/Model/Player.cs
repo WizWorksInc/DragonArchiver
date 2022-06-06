@@ -1,6 +1,6 @@
 ﻿namespace DragonArchiver.Core.Model
 {
-    internal class Player : Creature, ILocations, IClassable
+    internal class Player : Creature, ILocation, IClassable
     {
         public override string Id { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
