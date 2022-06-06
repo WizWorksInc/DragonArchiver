@@ -22,7 +22,7 @@
         public override List<string> Vulnerabilities { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override Dictionary<string, object> Actions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public override Dictionary<string, ushort> Perceptions { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string CurrentLocation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string HomeLocation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string CurrentLocation? { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string HomeLocation? { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
