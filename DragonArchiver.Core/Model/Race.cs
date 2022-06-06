@@ -11,7 +11,7 @@ namespace DragonArchiver.Core.Model
         public string name { get; set; }
         public string desc { get; set; }
 
-        [JsonProperty("asi-desc")]
+        
         public string AsiDesc { get; set; }
         public List<Asi> asi { get; set; }
         public string age { get; set; }
@@ -19,7 +19,7 @@ namespace DragonArchiver.Core.Model
         public string size { get; set; }
         public Speed speed { get; set; }
 
-        [JsonProperty("speed-desc")]
+        
         public string SpeedDesc { get; set; }
         public string languages { get; set; }
         public string vision { get; set; }
@@ -37,7 +37,7 @@ namespace DragonArchiver.Core.Model
         public string name { get; set; }
         public string desc { get; set; }
 
-        [JsonProperty("asi-desc")]
+        
         public string AsiDesc { get; set; }
         public List<Asi> asi { get; set; }
         public string traits { get; set; }
