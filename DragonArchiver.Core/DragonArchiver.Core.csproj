@@ -87,7 +87,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="Model\PlayerClasses\" />
+	  <Compile Remove="Model\PlayerClasses\**" />
+	  <EmbeddedResource Remove="Model\PlayerClasses\**" />
+	  <MauiCss Remove="Model\PlayerClasses\**" />
+	  <MauiXaml Remove="Model\PlayerClasses\**" />
+	  <None Remove="Model\PlayerClasses\**" />
 	</ItemGroup>
 
 	<ItemGroup>
