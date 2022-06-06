@@ -18,8 +18,23 @@ If you need any help on the topic, please join our discord and ask questions!
 
 > These guidelines are primarily suggestions, not requirements, but failure to follow the guidelines could lead to your Pull Request getting declined or asked for changes. So generally, it is in your best interest to follow these guidelines to the best of your ability!
 
-## Setting up .Net MAUI
-WIP
+## Setting up your .NET MAUI Development Environment
+1. Install the latest [Visual Studio 2022 Preview](https://c2rsetup.officeapps.live.com/c2r/downloadVS.aspx?sku=Community&channel=Preview&Version=VS2022&source=VSLandingPage&add=Microsoft.VisualStudio.Workload.CoreEditor&add=Microsoft.VisualStudio.Workload.NetCrossPlat;includeRecommended&cid=2304)
+
+2. Install the .NET Multi-platform App UI development workload
+
+![info](https://docs.microsoft.com/en-us/dotnet/maui/get-started/media/first-app/vs-workloads.png)
+
+3. Open DragonArchiver.sln with the visual studio preview build
+
+4. Run `RUN_THIS.py` to init submodules.
+
+5. Build the solution
+
+6. You're good to go!
+
+[Microsoft Docs on MAUI](https://docs.microsoft.com/en-us/dotnet/maui/get-started/first-app?pivots=devices-windows)
+
 
 ## Building
 
