@@ -1,183 +1,31 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFrameworks>net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
-    <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
-    <UseMaui>true</UseMaui>
-    <SingleProject>true</SingleProject>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-
-    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-    <CompilerGeneratedFilesOutputPath>$(BaseIntermediateOutputPath)\GeneratedFiles</CompilerGeneratedFilesOutputPath>
-
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
-    <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
-    <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <GitInfoReportImportance>high</GitInfoReportImportance>
-    <Summary></Summary>
-    <Authors>WizWorks</Authors>
-    <Owners>WizWorks</Owners>
-    <NeutralLanguage>en</NeutralLanguage>
-    <Product>Dragon Archiver</Product>
-    <Copyright>© WizWorks Inc. All rights reserved.</Copyright>
-    <RepositoryUrl>https://github.com/WizWorksInc/DragonArchiver</RepositoryUrl>
-    <DefineConstants>$(DefineConstants);</DefineConstants>
-    <UseFullSemVerForNuGet>false</UseFullSemVerForNuGet>
-    <Title>DragonArchiver</Title>
-    <Description></Description>
-    <Product>$(AssemblyName)</Product>
-    <AssemblyVersion></AssemblyVersion>
-    <AssemblyFileVersion></AssemblyFileVersion>
-    <Version></Version>
-    <Configurations>Debug;Release</Configurations>
-    <DefaultLanguage>en</DefaultLanguage>
-    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <AnalysisLevel>preview-minimum</AnalysisLevel>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-android|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-android|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-ios|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-ios|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-maccatalyst|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-maccatalyst|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net6.0-windows10.0.19041.0|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net6.0-windows10.0.19041.0|AnyCPU'">
-    <ApplicationTitle>Dragon Archiver</ApplicationTitle>
-    <ApplicationId>co.wizworks.dragonarchiver</ApplicationId>
-  </PropertyGroup>
-
-  <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.iOS')) != true AND $(TargetFramework.StartsWith('net6.0-ios')) != true AND $(TargetFramework.StartsWith('net6.0-maccatalyst')) != true ">
-    <Compile Remove="**\**\*.ios.cs" />
-    <None Include="**\**\*.ios.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-    <Compile Remove="**\ios\**\*.cs" />
-    <None Include="**\ios\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.Mac')) != true ">
-    <Compile Remove="**\*.macos.cs" />
-    <Compile Remove="**\macos\**\*.cs" />
-    <None Include="**\macos\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.StartsWith('Xamarin.Mac')) != true AND $(TargetFramework.StartsWith('Xamarin.iOS')) != true AND $(TargetFramework.StartsWith('net6.0-ios')) != true AND $(TargetFramework.StartsWith('net6.0-maccatalyst')) != true">
-    <Compile Remove="**\*.macios.cs" />
-    <None Include="**\*.macios.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-    <Compile Remove="**\macios\**\*.cs" />
-    <None Include="**\macios\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.StartsWith('MonoAndroid')) != true AND $(TargetFramework.StartsWith('net6.0-android')) != true ">
-    <Compile Remove="**\**\*.android.cs" />
-    <None Include="**\**\*.android.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-    <Compile Remove="**\android\**\*.cs" />
-    <None Include="**\android\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-  </ItemGroup>
-  <ItemGroup Condition="$(TargetFramework.Contains('-windows')) != true ">
-    <Compile Remove="**\*.windows.cs" />
-    <None Include="**\*.windows.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-    <Compile Remove="**\windows\**\*.cs" />
-    <None Include="**\windows\**\*.cs" Exclude="$(DefaultItemExcludes);$(DefaultExcludesInProjectFolder)" />
-  </ItemGroup>
-
-	<ItemGroup>
-		<!-- App Icon -->
-		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
-
-		<!-- Splash Screen -->
-		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
-
-		<!-- Images -->
-		<MauiImage Include="Resources\Images\*" />
-		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
-
-		<!-- Custom Fonts -->
-		<MauiFont Include="Resources\Fonts\*" />
-
-		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
-		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <Compile Remove="Model\PlayerClasses\**" />
-	  <EmbeddedResource Remove="Model\PlayerClasses\**" />
-	  <MauiCss Remove="Model\PlayerClasses\**" />
-	  <MauiXaml Remove="Model\PlayerClasses\**" />
-	  <None Remove="Model\PlayerClasses\**" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="..\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
-	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="CommunityToolkit.Maui" Version="1.0.0" />
-	  <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
-	  <PackageReference Include="CsvHelper" Version="27.2.1" />
-	  <PackageReference Include="FluentValidation" Version="11.0.2" />
-	  <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
-	  <PackageReference Include="Markdig" Version="0.30.2" />
-	  <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.5" />
-	  <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="6.0.5" />
-	  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="6.0.5" />
-	  <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
-	  <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
-	  <PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
-	  <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-	  <PackageReference Include="RestSharp" Version="107.3.0" />
-	  <PackageReference Include="RestSharp.Serializers.NewtonsoftJson" Version="107.3.0" />
-	  <PackageReference Include="Serilog" Version="2.11.0" />
-	  <PackageReference Include="Serilog.Extensions.Logging" Version="3.1.0" />
-	  <PackageReference Include="Serilog.Settings.Configuration" Version="3.3.0" />
-	  <PackageReference Include="Serilog.Sinks.Console" Version="4.0.1" />
-	  <PackageReference Include="Serilog.Sinks.File" Version="5.0.0" />
-	  <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
-	  <PackageReference Include="System.Threading.Channels" Version="6.0.0" />
-	  <PackageReference Include="YamlDotNet" Version="11.2.1" />
-	</ItemGroup>
-
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <!--Avalonia doesen't support TrimMode=link currently,but we are working on that https://github.com/AvaloniaUI/Avalonia/issues/6892 -->
+        <TrimMode>copyused</TrimMode>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    </PropertyGroup>
+    <ItemGroup>
+        <Folder Include="Models\" />
+        <AvaloniaResource Include="Assets\**" />
+        <Folder Include="Resources" />
+        <None Remove=".gitignore" />
+    </ItemGroup>
+    <ItemGroup>
+        <!--This helps with theme dll-s trimming.
+        If you will publish your application in self-contained mode with p:PublishTrimmed=true and it will use Fluent theme Default theme will be trimmed from the output and vice versa.
+        https://github.com/AvaloniaUI/Avalonia/issues/5593 -->
+        <TrimmableAssembly Include="Avalonia.Themes.Fluent" />
+        <TrimmableAssembly Include="Avalonia.Themes.Default" />
+    </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Avalonia" Version="0.10.14" />
+        <PackageReference Include="Avalonia.Desktop" Version="0.10.14" />
+        <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.14" />
+        <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.14" />
+        <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
+    </ItemGroup>
 </Project>
