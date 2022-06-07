@@ -1,6 +1,6 @@
-namespace DragonArchiver.Core.Model
+﻿namespace DragonArchiver.Core.Model
 {
-    internal interface IBiographable
+    internal interface IBiographic
     {
         string Backstory { get; set; }
     }
