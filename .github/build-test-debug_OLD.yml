@@ -1,0 +1,87 @@
+name: Build MAUI
+
+on:
+  push:
+    branches: [ main ]
+
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+env:
+    DOTNETVERSION:  6.0.x
+    MAUIROLLBACKLINK: https://maui.blob.core.windows.net/metadata/rollbacks/6.0.312.json
+jobs:
+  buildwindows:
+    runs-on: windows-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Submodule
+        run: |
+          git submodule update --init --recursive
+
+      - name: Setup .NET Core SDK ${{env.DOTNETVERSION}}
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '${{env.DOTNETVERSION}}'
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-prerelease: true
+
+      - name: Install .NET MAUI
+        shell: pwsh
+        run: |
+          & dotnet --version
+          & dotnet nuget locals all --clear
+          & dotnet workload install maui --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+          & dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+            
+      - name: Restore nuget packages
+        run: dotnet restore DragonArchiver.Core
+
+      - name: Build Dragon Archiver [android]
+        shell: pwsh
+        run: dotnet build DragonArchiver.Core -f net6.0-android -c Debug
+
+      - name: Build Dragon Archiver [windows]
+        shell: pwsh
+        run: dotnet build DragonArchiver.Core -f net6.0-windows10.0.19041.0 -c Debug
+
+  buildmac:
+    runs-on: macos-11
+    
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Submodule
+        run: |
+          git submodule update --init --recursive
+
+      - name: Setup .NET Core SDK ${{env.DOTNETVERSION}}
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '${{env.DOTNETVERSION}}'
+
+      - name: Install .NET MAUI
+        shell: pwsh
+        run: |
+          & dotnet --version
+          & dotnet nuget locals all --clear
+          & dotnet workload install maui --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+          & dotnet workload install android ios maccatalyst tvos macos maui wasm-tools --from-rollback-file ${{env.MAUIROLLBACKLINK}} --source https://aka.ms/dotnet6/nuget/index.json --source https://api.nuget.org/v3/index.json
+            
+      - name: Restore nuget packages
+        run: dotnet restore DragonArchiver.Core
+
+      - name: Build Dragon Archiver [ios]
+        shell: pwsh
+        run: dotnet build DragonArchiver.Core -f net6.0-ios -c Debug
+
+      - name: Build Dragon Archiver [macos]
+        shell: pwsh
+        run: dotnet build DragonArchiver.Core -f net6.0-maccatalyst -c Debug
