@@ -1,4 +1,6 @@
-using System.Net.Http.Json;
+using DragonArchiver.Core.Models;
+using DragonArchiver.Core.ViewModels;
+using System.Net.Http;
 
 namespace DragonArchiver.Core.Services;
 
