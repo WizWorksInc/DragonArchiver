@@ -9,16 +9,9 @@ Please note we have a code of conduct; please follow it in all your interactions
 
 ## Forking Project
 
-All contributions must start with a fork of the repository. So please fork the project before continuing!
+All contributions must start with a fork of the repository. 
 
-## Building Project
-
-1. Fork the `dev` branch as a personal repository.
-2. Clone your forked repository.
-3. Run `RUN_THIS.py` to init submodules.
-4. Compile the solution.
-
-## Pull Request Process
+## Pull Request Process (WIP)
 
 1. Ensure any install or build dependencies are removed before the end of the layer when doing a
    build.
