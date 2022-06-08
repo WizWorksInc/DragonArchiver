@@ -11,6 +11,46 @@ Please note we have a code of conduct; please follow it in all your interactions
 
 All contributions must start with a fork of the repository. So please fork the project before continuing!
 
+## Setting up your development environment 
+### Setting up for Visual Studio
+1. Make sure you have the most recent version of visual studio installed.
+
+2. Install the [Avalonia extension](https://marketplace.visualstudio.com/items?itemName=AvaloniaTeam.AvaloniaforVisualStudio) for visual studio.
+
+3. Run the command `dotnet new -i Avalonia.Templates` from the command prompt on your machine.
+
+4. Your good to go! Now just follow the build instructions.
+
+
+### Setting up for JetBrains Rider
+
+1. Download and install .NET 6 SDK [Download .NET (Linux, macOS, and Windows) (microsoft.com)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
+
+2. Make sure you have the most recent version of JetBrains Rider installed.
+
+3. Run the command `dotnet new -i Avalonia.Templates` from the command prompt on your machine.
+
+4. Install the Avalonia Plugin
+
+   Once Rider loads you will see the Welcome Screen. Click the `Configure` dropdown and select `Plugins`.
+
+![rider-welcome](https://avaloniaui.net/docs/advanced-tutorial/images/rider-welcome.png)
+
+A new Preferenes Screen will open up. Click the `Settings` icon as shown and select `Manage Plugin Repositories...`
+
+![configure-plugin-repos](https://avaloniaui.net/docs/advanced-tutorial/images/configure-plugin-repos.png)
+
+Click the `+` icon and enter the url `https://plugins.jetbrains.com/plugins/dev/14839` then click `OK`:
+
+![enter-plugin-repo](https://avaloniaui.net/docs/advanced-tutorial/images/enter-plugin-repo.png)
+
+Now click on the `Marketplace` tab and search for `Avalonia`. Select `AvaloniaRider` and click `Install`; once thats done, click the `Restart IDE` button that appears.
+
+![plugin-install](https://avaloniaui.net/docs/advanced-tutorial/images/plugin-install.png)
+
+Now Rider should be ready to develop for DragonArchiver! Now just follow the build instructions.
+
+
 ## Building Project
 
 1. Fork the `dev` branch as a personal repository.
