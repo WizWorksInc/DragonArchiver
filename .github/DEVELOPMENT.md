@@ -67,4 +67,68 @@ Now Rider should be ready to develop for DragonArchiver! Now just follow the bui
 
 ## How does MVVM Work?
 
-WIP
+MVVM (**M**odel **V**iew **V**iew**M**odel) is a fantastic architecture to use with Avalonia and C#.
+
+It may sound complicated, and there are many over complicated guides and tutorials on the internet, but worry not!
+
+MVVM is simply a way to enforce [Separation of concerns](https://en.wikipedia.org/wiki/Separation_of_concerns). For many apps, this may seem overkill. Keeping UI and business logic separated in such a way. However the app that you're building, often start small but can quickly grow. The needs of our project can change rapidly and suddenly and it is in our best interest to not have to shoe horn changes into our code.
+
+Following the MVVM approach will alleviate these difficulties and help keep our UI code scalable.
+
+![MVVM](https://avaloniaui.net/docs/advanced-tutorial/images/mvvm.png)
+
+**How does MVVM work?**
+
+Back to separation of concerns, in any GUI application there are at least 3 main concerns:
+
+* UI - Layout, Style, Content
+* UI Logic - How the controls interact with each other and the user.
+* Business Logic - The actual functionality your application provides, dealing with a database, controlling some hardware you built for IOT, ordering products from your store.
+
+**Why is it a good idea to keep these separated?**
+
+If your code combines or mixes these 3 aspects together, it will tie the design of your UI directly to your business logic. This will make it incredibly difficult to make large changes to the way your application works. This was common place in the not too distant past.
+
+**How does MVVM achieve this?**
+
+**Model \(Business Logic\)**
+
+All your business logic can be contained in plain classes, they can be designed and implemented however you want. Most project you already may have this. The general term we call these business logic classes is `Models`.
+
+Your models can simply expose `methods` \(functions\), `properties` and use `events` to notify other parts of the MVVM architecture when something has changed in the system.
+
+For example if your domain, is a music store. Perhaps your business logic provides a list of the top 10 albums. It may happen that the list changes and this change can be propagated by use of an `event`.
+
+So now we have the `Model` part of MVVM, all self contained, the `models` know nothing about any of the other parts.
+
+**ViewModel \(UI Logic\)**
+
+Your user interface is essentially the way your `users` interact with your business logic or `models`. There needs to be a way for your UI to interact with the business logic. We do this using a `ViewModel`. A `ViewModel` knows about the `Model` that it represents. It does not know anything about the layout or design of the UI or `View` part.
+
+A `ViewModel` is essentially special type of `Model` that represents all the `data` that will be displayed in the UI. It also represents all the `actions` that can be done with the UI. For example what happens when a button is clicked.
+
+This keeps things like disabling buttons when the user hasnt input the correct information away from your business logic.
+
+A `ViewModel` will `subscribe` to or `observe` events on a model so that it knows when something in your system has changed, with the intention that it can then update the UI so the `user` will know about it.
+
+A `ViewModel` will also call or trigger functionality in response to user input like a `Button` being `clicked`.
+
+**View \(UI\)**
+
+The view provides the layout and content of the UI. It knows about the `ViewModel` and the information it provides that can be displayed in the UI.
+
+The view describes how to "present" data and provides controls the user can interact with.
+
+A `View` can retrieve `data` to display with the use of `Bindings` . `Bindings` can also be used for `interactions` to be communicated back to the `ViewModel` .
+
+**Summary**
+
+A model provides the business logic and talks to the ViewModel.
+
+A ViewModel provides the UI logic and invokes the business logic in response to user input.
+
+A View provides the look, layout and content of the UI.
+
+Lets get started building something!
+
+[Citation source](https://docs.avaloniaui.net/tutorials/music-store-app)
