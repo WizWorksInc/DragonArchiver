@@ -53,7 +53,7 @@ Now Rider should be ready to develop for DragonArchiver! Now just follow the bui
 
 ## Building Project
 
-1. Fork the `dev` branch as a personal repository.
+1. Fork the `main` branch as a personal repository.
 2. Clone your forked repository.
 3. Run `RUN_THIS.py` to init submodules.
 4. Compile the solution.
