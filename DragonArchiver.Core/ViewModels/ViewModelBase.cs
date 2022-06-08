@@ -1,8 +1,7 @@
 ﻿using ReactiveUI;
 
-namespace DragonArchiver.Core.ViewModels
+namespace DragonArchiver.Core.ViewModels;
+
+public class ViewModelBase : ReactiveObject
 {
-    public class ViewModelBase : ReactiveObject
-    {
-    }
 }

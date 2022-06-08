@@ -1,7 +1,17 @@
-﻿namespace DragonArchiver.Core.ViewModels
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Threading.Tasks;
+using DragonArchiver.Core.Models;
+using DragonArchiver.Core.Services;
+using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
+
+namespace DragonArchiver.Core.ViewModels;
+
+public partial class MainWindowViewModel : ViewModelBase
 {
-    public class MainWindowViewModel : ViewModelBase
-    {
-        public string Greeting => "Welcome to DragonArchiver!";
-    }
+    public string Greeting => "Welcome to Avalonia!";
+    public Task<List<Item>?> Items => new ItemService().GetItems();
 }

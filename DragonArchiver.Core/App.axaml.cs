@@ -1,6 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
+using DragonArchiver.Core.Services;
 using DragonArchiver.Core.ViewModels;
 using DragonArchiver.Core.Views;
 
@@ -19,7 +20,7 @@ namespace DragonArchiver.Core
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new MainWindowViewModel(),
+                    DataContext = new ItemsViewModel(),
                 };
             }
 

@@ -6,12 +6,14 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DragonArchiver.Core.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="DragonArchiver.Core">
-
+        Title="DragonArchiver">
+    
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ListBox Items="{Binding Items}"/>
+    </Grid>
 </Window>

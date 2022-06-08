@@ -1,25 +1,31 @@
+using System.Collections.Generic;
+using System.IO;
+using System.Net.Http;
+using System.Text.Json;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
 using DragonArchiver.Core.Models;
 using DragonArchiver.Core.ViewModels;
-using System.Net.Http;
 
 namespace DragonArchiver.Core.Services;
 
 public class ItemService
 {
-    HttpClient httpClient;
-    private string _url;
-    private string _uri = @"DragonArchiver.Core/Data/JsonData/WOTC_5e_SRD_v5.1";
+    public List<Item>? ItemList { get; set; }
+    private HttpClient _httpClient;
+    private const string Url = @"";
+    private const string Uri = @"DragonArchiver.Core/Data/JsonData/WOTC_5e_SRD_v5.1";
 
     public ItemService()
     {
-        this.httpClient = new HttpClient();
+        this._httpClient = new HttpClient();
     }
 
-    List<Item> itemList;
-    public async Task<List<Item>> GetItems()
+
+    public async Task<List<Item>?> GetItems()
     {
-        if (itemList?.Count > 0)
-            return itemList;
+        if (ItemList?.Count > 0)
+            return ItemList;
 
         // Online
         /*var response = await httpClient.GetAsync("");
@@ -28,11 +34,13 @@ public class ItemService
             itemList = await response.Content.ReadFromJsonAsync<List<Item>>();
         }*/
         // Offline
-        using var stream = await FileSystem.OpenAppPackageFileAsync(_uri + "/magicitems.json");
+        await using var stream = await FileSystem.OpenAppPackageFileAsync(Uri + "/magicitems.json");
         using var reader = new StreamReader(stream);
         var contents = await reader.ReadToEndAsync();
-        itemList = JsonSerializer.Deserialize<List<Item>>(contents);
+        ItemList = JsonSerializer.Deserialize<List<Item>>(contents);
         
-        return itemList;
+        return ItemList;
     }
+    
+    
 }
