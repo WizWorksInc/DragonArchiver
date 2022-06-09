@@ -2,6 +2,7 @@
 {
 	/// <summary>
 	/// An abstract implementation of a creature.
+	/// The point of this class is to implement the core items required of both a monster and a player.
 	/// </summary>
 	public abstract class Creature
     {
