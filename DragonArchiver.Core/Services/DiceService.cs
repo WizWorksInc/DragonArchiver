@@ -99,7 +99,7 @@ public class DiceService
                 ? diceMatch.Groups[4].Value is "+"
                     ? RollDice(amountOfDice, typeOfDie).Sum() + diceValueModifier
                     : RollDice(amountOfDice, typeOfDie).Sum() - diceValueModifier
-                : RollDice(amountOfDice, typeOfDie).Sum();
+                : RollDice(amountOfDice, typeOfDie).Sum(); // If we have no modifiers then return the sum of our dice
         }
 
         return 0;
