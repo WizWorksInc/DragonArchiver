@@ -2,7 +2,7 @@
 
 namespace DragonArchiver.Core.Models;
 
-public interface ICombatCapable
+public interface ICombatComponent
 {
 	public string? DamageVulnerabilities { get; set; }
 	public string? DamageResistances { get; set; }
