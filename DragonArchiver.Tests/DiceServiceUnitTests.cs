@@ -10,7 +10,7 @@ public class DiceServiceUnitTests
         var diceServiceTesting = new DiceService();
         
         Assert.InRange(diceServiceTesting.RollDice(20), 1, 20);
-        Assert.Collection(diceServiceTesting.RollDice(1, 1), x => { });
+        Assert.Collection(diceServiceTesting.RollDice(1, 1), _ => { });
     }
     
     [Fact]
