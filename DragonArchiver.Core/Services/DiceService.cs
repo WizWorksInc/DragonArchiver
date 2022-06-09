@@ -83,7 +83,7 @@ public class DiceService
         
         For reference the string breaks down as follows:
             RegExpression: (\d+)d(\d+)([\+-])(\d+)?$
-            (1)[d](20)(+)(10) // We ignore [d] as it is not used in the evaluation
+            (1)[d]((20)(+)(10)) // We ignore [d] as it is not used in the evaluation
             where:
                 diceMatch.Groups[1].Value == "1"
                 diceMatch.Groups[2].Value == "20"
