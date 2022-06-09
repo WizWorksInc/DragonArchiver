@@ -1,6 +1,6 @@
 ﻿namespace DragonArchiver.Core.Models
 {
-    internal interface IBiographic
+    internal interface IBackgroundComponent
     {
         string Backstory { get; set; }
     }
