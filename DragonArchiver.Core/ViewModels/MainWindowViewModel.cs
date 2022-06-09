@@ -5,8 +5,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using DragonArchiver.Core.Models;
 using DragonArchiver.Core.Services;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
+
 
 namespace DragonArchiver.Core.ViewModels;
 

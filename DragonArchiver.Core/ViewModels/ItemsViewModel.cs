@@ -5,35 +5,40 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using DragonArchiver.Core.Models;
 using DragonArchiver.Core.Services;
-using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using Xamarin.Essentials;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
+using Avalonia.Media.Imaging;
+using ReactiveUI;
 
 namespace DragonArchiver.Core.ViewModels;
 
-public partial class ItemsViewModel : BaseViewModel
+public partial class ItemsViewModel : ViewModelBase
 {
     
     public ObservableCollection<Item> Items { get; } = new();
     private ItemService _itemService;
-    public ItemsViewModel()
+    private readonly Item _item;
+    public ItemsViewModel(Item item)
     {
-        Title = "Item List";
-        this._itemService = new ItemService();
+        _item = item;
     }
+    
+    public string Name => _item.Name;
+    public string Description => _item.Desc;
 
-    [ObservableProperty] private bool _isRefreshing;
+
     
 
     public async Task GetItemsAsync()
     {
-        if (IsBusy)
-            return;
+        //if (IsBusy)
+            //return;
 
         try
         {
 
-            IsBusy = true;
+            //IsBusy = true;
             var items = await _itemService.GetItems();
 
             if(Items.Count != 0)
@@ -50,8 +55,8 @@ public partial class ItemsViewModel : BaseViewModel
         }
         finally
         {
-            IsBusy = false;
-            IsRefreshing = false;
+            //IsBusy = false;
+            //IsRefreshing = false;
         }
 
     }    

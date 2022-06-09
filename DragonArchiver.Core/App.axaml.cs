@@ -20,7 +20,7 @@ namespace DragonArchiver.Core
             {
                 desktop.MainWindow = new MainWindow
                 {
-                    DataContext = new ItemsViewModel(),
+                    DataContext = new MainWindowViewModel(),
                 };
             }
 
