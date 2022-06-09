@@ -5,7 +5,7 @@ namespace DragonArchiver.Core.Models;
 /// <summary>
 /// A representation of a monster. This class is the root class for handling our JSON data.
 /// </summary>
-public class Monster : Creature, ICombatCapable
+public class Monster : Creature, ICombatComponent
 {
 	public override string? Name { get; set; }
 	public override string? Size { get; set; }
