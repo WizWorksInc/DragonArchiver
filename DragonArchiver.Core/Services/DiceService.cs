@@ -11,15 +11,15 @@ namespace DragonArchiver.Core.Services;
 /// </summary>
 public class DiceService
 {
-     private static readonly Random Rand = new Random();
+     private readonly Random _rand = new Random();
      
      /// <summary>
      /// Roll a Die!
      /// </summary>
      /// <returns>int</returns>
-     public static int RollDice(int dieFaces)
+     public int RollDice(int dieFaces)
      {
-          return dieFaces == 0 ? 0 : Rand.Next(1, dieFaces);
+          return dieFaces == 0 ? 0 : _rand.Next(1, dieFaces);
      }
 
      /// <summary>
@@ -28,7 +28,7 @@ public class DiceService
      /// <param name="diceFaces"></param>
      /// <param name="amountOfDice"></param>
      /// <returns>List of dice rolls</returns>
-     public List<int> RollDice(int diceFaces, int amountOfDice)
+     public List<int> RollDice(int amountOfDice, int diceFaces )
      {
           // Validate we are receiving a valid entry otherwise return 0
           if (amountOfDice <= 0 || diceFaces <= 0)
@@ -36,7 +36,7 @@ public class DiceService
           
           var returnList = new List<int>();
           for (var i = 0; i < amountOfDice; i++)
-               returnList.Add(Rand.Next(1, diceFaces));
+               returnList.Add(_rand.Next(1, diceFaces));
           
           return returnList;
      }
@@ -79,7 +79,7 @@ public class DiceService
                if (int.TryParse(diceMatch.Groups[1].Value, out int amountOfDice) &&
                    int.TryParse(diceMatch.Groups[2].Value, out int typeOfDie))
                {
-                    return RollDice(typeOfDie, amountOfDice).Sum();
+                    return RollDice(amountOfDice, typeOfDie).Sum();
                }
           }
           catch (Exception e)
