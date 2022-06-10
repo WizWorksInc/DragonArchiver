@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using System.Text.Json;
 
 namespace DragonArchiver.Core.Models;
 
@@ -8,9 +9,13 @@ namespace DragonArchiver.Core.Models;
 public class Item
 {
 
+    [JsonPropertyName("name)]
     public string? Name { get; set; }
+    [JsonPropertyName("desc")]
     public string? Desc { get; set; }
+    [JsonPropertyName("type")]
     public string? Type { get; set; }
+    [JsonPropertyName("rarity")]
     public string? Rarity { get; set; }
 
 }
