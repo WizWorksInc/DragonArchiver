@@ -9,7 +9,7 @@ namespace DragonArchiver.Core.Models;
 public class Item
 {
 
-    [JsonPropertyName("name)]
+    [JsonPropertyName("name")]
     public string? Name { get; set; }
     [JsonPropertyName("desc")]
     public string? Desc { get; set; }
