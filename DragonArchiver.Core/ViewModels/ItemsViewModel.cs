@@ -39,13 +39,13 @@ public partial class ItemsViewModel : ViewModelBase
         {
 
             //IsBusy = true;
-            var items = await _itemService.GetItems();
+            //var items = await _itemService.GetItems();
 
             if(Items.Count != 0)
                 Items.Clear();
 
-            foreach(var item in items)
-                Items.Add(item);
+            //foreach(var item in items)
+                //Items.Add(item);
 
         }
         catch (Exception ex)

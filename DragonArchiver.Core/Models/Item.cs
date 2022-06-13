@@ -9,14 +9,14 @@ namespace DragonArchiver.Core.Models;
 /// </summary>
 public class Item
 {
+    public string Name { get; set; } = null!;
+    public string Desc { get; set; } = null!;
 
-    [JsonPropertyName("name")]
-    public string? Name { get; set; }
-    [JsonPropertyName("desc")]
-    public string? Desc { get; set; }
-    [JsonPropertyName("type")]
-    public string? Type { get; set; }
-    [JsonPropertyName("rarity")]
-    public string? Rarity { get; set; }
+    public string Type { get; set; } = null!;
+
+    public string Rarity { get; set; } = null!;
+
+    public string? RequiresAttunement { get; set; }
+    
 
 }

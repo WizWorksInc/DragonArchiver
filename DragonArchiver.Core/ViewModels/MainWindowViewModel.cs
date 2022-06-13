@@ -11,6 +11,6 @@ namespace DragonArchiver.Core.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
-    public Task<List<Item>?> Items => new ItemService().GetItems();
+    //public string Greeting => "Welcome to Avalonia!";
+    //public Task<List<Item>?> Items => new ItemService().GetItems();
 }

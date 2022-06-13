@@ -10,7 +10,6 @@ namespace DragonArchiver.Core.Views
         public MainWindow()
         {
             InitializeComponent();
-            
         }
     }
 }

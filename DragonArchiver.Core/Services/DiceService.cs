@@ -90,16 +90,15 @@ public class DiceService
                 diceMatch.Groups[4].Value == "+"
                 diceMatch.Groups[5].Value == "10"
         */
-        if (int.TryParse(diceMatch.Groups[1].Value, out int amountOfDice) && 
+        if (int.TryParse(diceMatch.Groups[1].Value, out int amountOfDice) &&
             int.TryParse(diceMatch.Groups[2].Value, out int typeOfDie))
         {
-            // Check our operator. We should only see + or - : Then return our modifier with sum
+            // Check our operator. We should only see + or -
+            // If we see an operator return our sum + the value modifier : if we see not operator then return sum
             return diceMatch.Groups[4].Value is "+" or "-" &&
-                   int.TryParse(diceMatch.Groups[5].Value, out int diceValueModifier)
-                ? diceMatch.Groups[4].Value is "+"
-                    ? RollDice(amountOfDice, typeOfDie).Sum() + diceValueModifier
-                    : RollDice(amountOfDice, typeOfDie).Sum() - diceValueModifier
-                : RollDice(amountOfDice, typeOfDie).Sum(); // If we have no modifiers then return the sum of our dice
+                   int.TryParse($"{diceMatch.Groups[4].Value}{diceMatch.Groups[5].Value}", out int diceValueModifier)
+                ? RollDice(amountOfDice, typeOfDie).Sum() + diceValueModifier
+                : RollDice(amountOfDice, typeOfDie).Sum();
         }
 
         return 0;

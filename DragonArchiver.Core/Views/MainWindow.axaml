@@ -6,14 +6,27 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DragonArchiver.Core.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
-        Title="DragonArchiver">
+        Title="DragonArchiver"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        
+        ExtendClientAreaToDecorationsHint="True">
     
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-        <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <ListBox Items="{Binding Items}"/>
-    </Grid>
+       <Panel>
+           <ExperimentalAcrylicBorder IsHitTestVisible="False">
+               <ExperimentalAcrylicBorder.Material>
+                   <ExperimentalAcrylicMaterial
+                       BackgroundSource="Digger"
+                       TintColor="Black"
+                       TintOpacity="1"
+                       MaterialOpacity="0.65" />
+               </ExperimentalAcrylicBorder.Material>
+           </ExperimentalAcrylicBorder>
+           
+           
+       </Panel>
 </Window>
