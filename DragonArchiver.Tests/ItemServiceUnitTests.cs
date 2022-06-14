@@ -8,7 +8,7 @@ namespace DragonArchiver.Tests;
 
 public class ItemServiceUnitTests
 {
-    /*private readonly ITestOutputHelper _testOutputHelper;
+    private readonly ITestOutputHelper _testOutputHelper;
 
     public ItemServiceUnitTests(ITestOutputHelper testOutputHelper)
     {
@@ -16,15 +16,14 @@ public class ItemServiceUnitTests
     }
 
     [Fact]
-    public void TestItems()
+    public void TestThatItemServiceIsProperlyReturningAListOfItems()
     {
-        ItemService item = new ItemService();
-        List<Item>? tes = item.GetItems();
-        foreach (var val in tes)
-        {
-            Console.WriteLine(val);
-        }
+        ItemService magicItems = new ItemService();
+        List<MagicItem>? magicItemsList = magicItems.GetItems();
+
+        //Debug.Assert(magicItemsList != null, nameof(magicItemsList) + " != null");
+        Assert.NotEmpty(magicItemsList);
 
 
-    }*/
+    }
 }

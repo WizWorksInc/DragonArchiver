@@ -13,7 +13,7 @@
         ExtendClientAreaToDecorationsHint="True">
     
     <Design.DataContext>
-        <vm:MainWindowViewModel/>
+        <vm:ItemsViewModel/>
     </Design.DataContext>
 
        <Panel>
@@ -27,6 +27,6 @@
                </ExperimentalAcrylicBorder.Material>
            </ExperimentalAcrylicBorder>
            
-           
+           <ItemsRepeater Items="{Binding ItemsList}"></ItemsRepeater>
        </Panel>
 </Window>

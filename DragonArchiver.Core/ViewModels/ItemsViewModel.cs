@@ -10,22 +10,33 @@ using System.Threading.Tasks;
 using System.Linq;
 using Avalonia.Media.Imaging;
 using ReactiveUI;
+using ReactiveUI.Fody.Helpers;
 
 namespace DragonArchiver.Core.ViewModels;
 
 public partial class ItemsViewModel : ViewModelBase
 {
-    
-    public ObservableCollection<Item> Items { get; } = new();
-    private ItemService _itemService;
-    private readonly Item _item;
-    public ItemsViewModel(Item item)
+    private static ItemService _itemService;
+
+    private ObservableCollection<MagicItem> _itemsList = new ObservableCollection<MagicItem>(_itemService.GetItems());
+    public ObservableCollection<MagicItem> ItemsList
     {
-        _item = item;
+        get => _itemsList;
+        set => this.RaiseAndSetIfChanged(ref _itemsList, value);
     }
+
+    private readonly MagicItem _item;
+    // public ItemsViewModel(Item item)
+    // {
+    //     _item = item;
+    // }
     
-    public string Name => _item.Name;
-    public string Description => _item.Desc;
+    // // This attribute [Reactive] enables property change notifications.
+    // [Reactive] public string Name { get; set; }
+    // [Reactive] public string Description { get; set; }
+    // [Reactive] public string Type { get; set; }
+    // [Reactive] public string Rarity { get; set; }
+    // [Reactive] public string? RequiresAttunement { get; set; }
 
 
     
@@ -41,8 +52,8 @@ public partial class ItemsViewModel : ViewModelBase
             //IsBusy = true;
             //var items = await _itemService.GetItems();
 
-            if(Items.Count != 0)
-                Items.Clear();
+            // if(Items.Count != 0)
+            //     Items.Clear();
 
             //foreach(var item in items)
                 //Items.Add(item);

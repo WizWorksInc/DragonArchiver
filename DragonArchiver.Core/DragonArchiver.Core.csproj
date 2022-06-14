@@ -6,8 +6,29 @@
         <!--Avalonia doesen't support TrimMode=link currently,but we are working on that https://github.com/AvaloniaUI/Avalonia/issues/6892 -->
         <TrimMode>copyused</TrimMode>
         <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
     <ItemGroup>
+        <AvaloniaResource Include="Resources\JsonData\creature_codex\document.json" />
+        <AvaloniaResource Include="Resources\JsonData\creature_codex\monsters.json" />
+        <AvaloniaResource Include="Resources\JsonData\original\document.json" />
+        <AvaloniaResource Include="Resources\JsonData\tome_of_beasts\document.json" />
+        <AvaloniaResource Include="Resources\JsonData\tome_of_beasts\monsters.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\armor.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\backgrounds.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\classes.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\conditions.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\document.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\feats.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\magicitems.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\monsters.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\planes.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\races.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\sections.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\spells.json" />
+        <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\weapons.json" />
+        <AvaloniaResource Include="Resources\LICENSE.md" />
+        <Folder Include="Data" />
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
         <AvaloniaResource Include="Data\**" />
@@ -26,6 +47,7 @@
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="0.10.15" />
         <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.15" />
+        <PackageReference Include="Avalonia.ReactiveUI.Events" Version="0.10.15" />
         <PackageReference Include="CppSharp" Version="1.0.1" />
         <PackageReference Include="FluentValidation" Version="11.0.2" />
         <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.2" />
@@ -44,12 +66,15 @@
         <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0-preview.4.22229.4" />
         <PackageReference Include="Microsoft.JSInterop" Version="6.0.5" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
+        <PackageReference Include="ReactiveUI" Version="18.1.8" />
+        <PackageReference Include="ReactiveUI.Fody" Version="18.1.8" />
+        <PackageReference Include="ReactiveUI.Testing" Version="18.1.8" />
+        <PackageReference Include="ReactiveUI.Validation" Version="2.2.1" />
         <PackageReference Include="SQLite" Version="3.13.0" />
         <PackageReference Include="System.Data.DataSetExtensions" Version="4.6.0-preview3.19128.7" />
         <PackageReference Include="System.Drawing.Common" Version="7.0.0-preview.4.22229.4" />
         <PackageReference Include="System.Linq" Version="4.3.0" />
         <PackageReference Include="System.Linq.Async" Version="6.0.1" />
-        <PackageReference Include="System.Text.Json" Version="7.0.0-preview.4.22229.4" />
         <PackageReference Include="System.Threading.Channels" Version="7.0.0-preview.4.22229.4" />
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
         <PackageReference Include="YamlDotNet" Version="11.2.1" />
@@ -67,5 +92,22 @@
       <UpToDateCheckInput Remove="Data\ImageData\monsters\darkmantle.png" />
       <UpToDateCheckInput Remove="Data\ImageData\monsters\hezrou.png" />
       <UpToDateCheckInput Remove="Data\ImageData\monsters\rust-monster.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <Compile Update="Samples\DirectAuthView.axaml.cs">
+        <DependentUpon>DirectAuthView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Resources.Designer.cs">
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+        <DependentUpon>Resources.resx</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Update="Resources.resx">
+        <Generator>PublicResXFileCodeGenerator</Generator>
+        <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      </EmbeddedResource>
     </ItemGroup>
 </Project>
