@@ -16,7 +16,7 @@ namespace DragonArchiver.Core.ViewModels;
 
 public partial class ItemsViewModel : ViewModelBase
 {
-    private static ItemService _itemService;
+    private static ContentListProviderService _itemService;
 
     private ObservableCollection<MagicItem> _itemsList = new ObservableCollection<MagicItem>(_itemService.GetItems());
     public ObservableCollection<MagicItem> ItemsList

@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 
 namespace DragonArchiver.Core.Services;
 
-public class ItemService
+public class ContentListProviderService
 {
     public List<MagicItem>? GetItems()
     {

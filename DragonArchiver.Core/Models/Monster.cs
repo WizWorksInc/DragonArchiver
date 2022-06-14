@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Newtonsoft.Json;
 
 namespace DragonArchiver.Core.Models;
 
@@ -46,18 +47,21 @@ public class Monster : Creature, ICombatComponent
 	public override int? CharismaSave { get; set; }
 	public override string? Senses { get; set; }
 	public override string? Languages { get; set; }
-	public string? DamageVulnerabilities { get; set; }
-	public string? DamageResistances { get; set; }
-	public string? DamageImmunities { get; set; }
-	public string? ConditionImmunities { get; set; }
-	public CreatureSpeedJson? SpeedJson { get; set; }
-	public List<Action>? Actions { get; set; }
-	public List<Reaction>? Reactions { get; set; }
-	public List<string>? Spells { get; set; }
-	public string? ArmorDesc { get; set; }
-	public string? ChallengeRating { get; set; }
-	public List<SpecialAbility>? SpecialAbilities { get; set; }
-	public string? LegendaryDesc { get; set; }
-	public List<LegendaryAction>? LegendaryActions { get; set; }
-	public string? Group { get; set; }
+	
+	
+	[JsonProperty("damage_vulnerabilities")] public string? DamageVulnerabilities { get; set; }
+	[JsonProperty("damage_resistances")] public string? DamageResistances { get; set; }
+	[JsonProperty("damage_immunities")] public string? DamageImmunities { get; set; }
+	[JsonProperty("conditional_immunities")] public string? ConditionImmunities { get; set; }
+	[JsonProperty("speed_json")] public CreatureSpeedJson? SpeedJson { get; set; }
+	[JsonProperty("actions")] public List<Action>? Actions { get; set; }
+	[JsonProperty("reactions")] public List<Reaction>? Reactions { get; set; }
+	[JsonProperty("spells")] public List<string>? Spells { get; set; }
+	[JsonProperty("armor_desc")] public string? ArmorDescription { get; set; }
+	[JsonProperty("challenge_rating")] public string? ChallengeRating { get; set; }
+	[JsonProperty("special_abilities")] public List<SpecialAbility>? SpecialAbilities { get; set; }
+	[JsonProperty("legendary_desc")] public string? LegendaryDescription { get; set; }
+	[JsonProperty("legendary_actions")] public List<LegendaryAction>? LegendaryActions { get; set; }
+	[JsonProperty("group")] public string? Group { get; set; }
+
 }

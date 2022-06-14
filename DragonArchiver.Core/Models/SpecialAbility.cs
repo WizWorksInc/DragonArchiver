@@ -1,9 +1,11 @@
-﻿namespace DragonArchiver.Core.Models;
+﻿using Newtonsoft.Json;
+
+namespace DragonArchiver.Core.Models;
 
 public class SpecialAbility
 {
-	public string? Name { get; set; }
-	public string? Desc { get; set; }
-	public int AttackBonus { get; set; }
-	public string? DamageDice { get; set; }
+	[JsonProperty("name")] public string? Name { get; set; }
+	[JsonProperty("desc")] public string? Desc { get; set; }
+	[JsonProperty("attack_bonus")] public int AttackBonus { get; set; }
+	[JsonProperty("damage_dice")] public string? DamageDice { get; set; }
 }
