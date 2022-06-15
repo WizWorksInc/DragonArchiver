@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace DragonArchiver.Core.Models;
 
@@ -49,19 +49,19 @@ public class Monster : Creature, ICombatComponent
 	public override string? Languages { get; set; }
 	
 	
-	[JsonProperty("damage_vulnerabilities")] public string? DamageVulnerabilities { get; set; }
-	[JsonProperty("damage_resistances")] public string? DamageResistances { get; set; }
-	[JsonProperty("damage_immunities")] public string? DamageImmunities { get; set; }
-	[JsonProperty("conditional_immunities")] public string? ConditionImmunities { get; set; }
-	[JsonProperty("speed_json")] public CreatureSpeedJson? SpeedJson { get; set; }
-	[JsonProperty("actions")] public List<Action>? Actions { get; set; }
-	[JsonProperty("reactions")] public List<Reaction>? Reactions { get; set; }
-	[JsonProperty("spells")] public List<string>? Spells { get; set; }
-	[JsonProperty("armor_desc")] public string? ArmorDescription { get; set; }
-	[JsonProperty("challenge_rating")] public string? ChallengeRating { get; set; }
-	[JsonProperty("special_abilities")] public List<SpecialAbility>? SpecialAbilities { get; set; }
-	[JsonProperty("legendary_desc")] public string? LegendaryDescription { get; set; }
-	[JsonProperty("legendary_actions")] public List<LegendaryAction>? LegendaryActions { get; set; }
-	[JsonProperty("group")] public string? Group { get; set; }
+	[JsonPropertyName("damage_vulnerabilities")] public string? DamageVulnerabilities { get; set; }
+	[JsonPropertyName("damage_resistances")] public string? DamageResistances { get; set; }
+	[JsonPropertyName("damage_immunities")] public string? DamageImmunities { get; set; }
+	[JsonPropertyName("conditional_immunities")] public string? ConditionImmunities { get; set; }
+	[JsonPropertyName("speed_json")] public CreatureSpeedJson? SpeedJson { get; set; }
+	[JsonPropertyName("actions")] public List<Action>? Actions { get; set; }
+	[JsonPropertyName("reactions")] public List<Reaction>? Reactions { get; set; }
+	[JsonPropertyName("spells")] public List<string>? Spells { get; set; }
+	[JsonPropertyName("armor_desc")] public string? ArmorDescription { get; set; }
+	[JsonPropertyName("challenge_rating")] public string? ChallengeRating { get; set; }
+	[JsonPropertyName("special_abilities")] public List<SpecialAbility>? SpecialAbilities { get; set; }
+	[JsonPropertyName("legendary_desc")] public string? LegendaryDescription { get; set; }
+	[JsonPropertyName("legendary_actions")] public List<LegendaryAction>? LegendaryActions { get; set; }
+	[JsonPropertyName("group")] public string? Group { get; set; }
 
 }

@@ -1,28 +1,28 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace DragonArchiver.Core.Models
 {
     public class Action
     {
-        [JsonProperty("name")] public string? Name { get; set; }
-        [JsonProperty("desc")] public string? Desc { get; set; }
-        [JsonProperty("attack_bonus")] public int AttackBonus { get; set; }
-        [JsonProperty("damage_dice")] public string? DamageDice { get; set; }
-        [JsonProperty("damage_bonus")] public int? DamageBonus { get; set; }
+        [JsonPropertyName("name")] public string? Name { get; set; }
+        [JsonPropertyName("desc")] public string? Desc { get; set; }
+        [JsonPropertyName("attack_bonus")] public int AttackBonus { get; set; }
+        [JsonPropertyName("damage_dice")] public string? DamageDice { get; set; }
+        [JsonPropertyName("damage_bonus")] public int? DamageBonus { get; set; }
     }
 
     public class LegendaryAction
     {
-        [JsonProperty("name")] public string? Name { get; set; }
-        [JsonProperty("desc")] public string? Desc { get; set; }
-        [JsonProperty("attack_bonus")] public int AttackBonus { get; set; }
-        [JsonProperty("damage_dice")] public string? DamageDice { get; set; }
+        [JsonPropertyName("name")] public string? Name { get; set; }
+        [JsonPropertyName("desc")] public string? Desc { get; set; }
+        [JsonPropertyName("attack_bonus")] public int AttackBonus { get; set; }
+        [JsonPropertyName("damage_dice")] public string? DamageDice { get; set; }
     }
 
     public class Reaction
     {
-        [JsonProperty("name")] public string? Name { get; set; }
-        [JsonProperty("desc")] public string? Desc { get; set; }
-        [JsonProperty("attack_bonus")] public int AttackBonus { get; set; }
+        [JsonPropertyName("name")] public string? Name { get; set; }
+        [JsonPropertyName("desc")] public string? Desc { get; set; }
+        [JsonPropertyName("attack_bonus")] public int AttackBonus { get; set; }
     }
 }

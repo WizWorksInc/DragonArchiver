@@ -1,14 +1,14 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 
 namespace DragonArchiver.Core.Models;
 
 public class CreatureSpeedJson
 {
-	[JsonProperty("walk")] public int Walk { get; set; }
-	[JsonProperty("swim")] public int Swim { get; set; }
-	[JsonProperty("fly")] public int? Fly { get; set; }
-	[JsonProperty("burrow")] public int? Burrow { get; set; }
-	[JsonProperty("climb")] public int? Climb { get; set; }
-	[JsonProperty("hover")] public bool? Hover { get; set; }
-	[JsonProperty("notes")] public string? Notes { get; set; }
+	[JsonPropertyName("walk")] public int Walk { get; set; }
+	[JsonPropertyName("swim")] public int Swim { get; set; }
+	[JsonPropertyName("fly")] public int? Fly { get; set; }
+	[JsonPropertyName("burrow")] public int? Burrow { get; set; }
+	[JsonPropertyName("climb")] public int? Climb { get; set; }
+	[JsonPropertyName("hover")] public bool? Hover { get; set; }
+	[JsonPropertyName("notes")] public string? Notes { get; set; }
 }
