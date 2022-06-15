@@ -1,1 +1,0 @@
-﻿This is a sample app for a login module using Avalonia and ReactiveUI.
