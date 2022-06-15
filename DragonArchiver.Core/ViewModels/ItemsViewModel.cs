@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -9,66 +10,44 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using Avalonia.Media.Imaging;
+using CppSharp.Parser.AST;
+using DragonArchiver.Core.Utils;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
 namespace DragonArchiver.Core.ViewModels;
 
-public partial class ItemsViewModel : ViewModelBase
+public partial class MagicItemViewModel : ViewModelBase
 {
-    private static ContentListProviderService _itemService;
 
-    private ObservableCollection<MagicItem> _itemsList = new ObservableCollection<MagicItem>(_itemService.GetItems());
-    public ObservableCollection<MagicItem> ItemsList
+    private readonly MagicItem _magicItem;
+    public MagicItemViewModel(MagicItem magicItem)
     {
-        get => _itemsList;
-        set => this.RaiseAndSetIfChanged(ref _itemsList, value);
+        _magicItem = magicItem;
     }
 
-    private readonly MagicItem _item;
-    // public ItemsViewModel(Item item)
-    // {
-    //     _item = item;
-    // }
-    
-    // // This attribute [Reactive] enables property change notifications.
-    // [Reactive] public string Name { get; set; }
-    // [Reactive] public string Description { get; set; }
-    // [Reactive] public string Type { get; set; }
-    // [Reactive] public string Rarity { get; set; }
-    // [Reactive] public string? RequiresAttunement { get; set; }
+    public string Name => _magicItem.Name;
+    public string Description => _magicItem.Description;
+    public string Type => _magicItem.Type;
+    public string Rarity => _magicItem.Rarity;
+    public string? RequiresAttunement => _magicItem.RequiresAttunement;
 
 
-    
-
-    public async Task GetItemsAsync()
+    public static async Task<IEnumerable<MagicItemViewModel>> LoadCached()
     {
-        //if (IsBusy)
-            //return;
+        return ((await MagicItem.LoadContentListAsync())!).Select(x => new MagicItemViewModel(x));
+    }
+    
 
-        try
-        {
+    // Deserialize our magicitems.json into a IEnumerable so we can store it in an observable collection
+    // This will help us later when calling the list for use
+    private static readonly IEnumerable<MagicItem>? MagicItems =
+        JsonListReader.LoadJsonList<MagicItem>(Resources.magicitems);
 
-            //IsBusy = true;
-            //var items = await _itemService.GetItems();
-
-            // if(Items.Count != 0)
-            //     Items.Clear();
-
-            //foreach(var item in items)
-                //Items.Add(item);
-
-        }
-        catch (Exception ex)
-        {
-            Debug.WriteLine($"Unable to get items: {ex.Message}");
-            
-        }
-        finally
-        {
-            //IsBusy = false;
-            //IsRefreshing = false;
-        }
-
-    }    
+    private ObservableCollection<MagicItem> _magicItemsList = new(MagicItems ?? Array.Empty<MagicItem>());
+    public ObservableCollection<MagicItem> MagicItemsList
+    {
+        get => _magicItemsList;
+        set => this.RaiseAndSetIfChanged(ref _magicItemsList, value);
+    }
 }

@@ -9,4 +9,8 @@
     <Application.Styles>
         <FluentTheme Mode="Dark"/>
     </Application.Styles>
+    
+    <!--<Application.Resources>
+        <vm:MagicItemViewModel x:Key="ItemsViewModel"></vm:MagicItemViewModel>
+    </Application.Resources>-->
 </Application>

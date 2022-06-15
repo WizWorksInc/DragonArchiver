@@ -1,32 +1,59 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:DragonArchiver.Core.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="DragonArchiver.Core.Views.MainWindow"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="DragonArchiver"
+        xmlns:local="using:DragonArchiver.Core.Views"
+        xmlns:vm="using:DragonArchiver.Core.ViewModels"
+        WindowStartupLocation="CenterScreen"
         TransparencyLevelHint="AcrylicBlur"
         Background="Transparent"
-        
-        ExtendClientAreaToDecorationsHint="True">
+        ExtendClientAreaToDecorationsHint="True"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="DragonArchiver">
     
     <Design.DataContext>
-        <vm:ItemsViewModel/>
+        <vm:MainWindowViewModel />
     </Design.DataContext>
+    
+    <Window.ContentTemplate>
+        <DataTemplate DataType="{x:Type vm:MagicItemViewModel}">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+               <StackPanel>
+                   <TextBlock Text="{Binding Name}"></TextBlock>
+               </StackPanel>
+            </StackPanel>
+        </DataTemplate>
+    </Window.ContentTemplate>
 
-       <Panel>
-           <ExperimentalAcrylicBorder IsHitTestVisible="False">
-               <ExperimentalAcrylicBorder.Material>
-                   <ExperimentalAcrylicMaterial
-                       BackgroundSource="Digger"
-                       TintColor="Black"
-                       TintOpacity="1"
-                       MaterialOpacity="0.65" />
-               </ExperimentalAcrylicBorder.Material>
-           </ExperimentalAcrylicBorder>
-           
-           <ItemsRepeater Items="{Binding ItemsList}"></ItemsRepeater>
-       </Panel>
+        <Panel>
+            <ExperimentalAcrylicBorder IsHitTestVisible="False">
+                <ExperimentalAcrylicBorder.Material>
+                    <ExperimentalAcrylicMaterial
+                        BackgroundSource="Digger"
+                        TintColor="Black"
+                        TintOpacity="1"
+                        MaterialOpacity="0.65" />
+                </ExperimentalAcrylicBorder.Material>
+            </ExperimentalAcrylicBorder>
+            <Panel Margin="40">
+
+                <TextBlock IsVisible="{Binding CollectionEmpty}" Text="No data to show!" HorizontalAlignment="Center" VerticalAlignment="Center" />
+
+                <ItemsControl Margin="0 40 0 0" Items="{Binding MagicItems}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <local:MagicItemView Margin="0 0 20 20" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </Panel>
+        </Panel>
 </Window>
