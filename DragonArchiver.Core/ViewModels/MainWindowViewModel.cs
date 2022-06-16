@@ -9,7 +9,7 @@ using ReactiveUI;
 
 namespace DragonArchiver.Core.ViewModels;
 
-public partial class MainWindowViewModel : ViewModelBase
+public partial class MainWindowViewModel : AppViewModel
 {
     public ObservableCollection<MagicItemViewModel> MagicItems { get; } = new();
     

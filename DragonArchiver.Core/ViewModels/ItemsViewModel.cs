@@ -1,23 +1,16 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using DragonArchiver.Core.Models;
-using DragonArchiver.Core.Services;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Linq;
-using Avalonia.Media.Imaging;
-using CppSharp.Parser.AST;
 using DragonArchiver.Core.Utils;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 
 namespace DragonArchiver.Core.ViewModels;
 
-public partial class MagicItemViewModel : ViewModelBase
+public partial class MagicItemViewModel : BaseViewModel
 {
 
     private readonly MagicItem _magicItem;
