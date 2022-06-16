@@ -13,6 +13,7 @@ and make pull requests. Proposals for changes specific to the Dragon Archiver ca
 
 See [CONTRIBUTING](.github/CONTRIBUTING.md), [CODE-OF-CONDUCT](.github/CODE_OF_CONDUCT.md) and the [Development Guide](.github/DEVELOPMENT.md).
 
+### Join our [discord!](https://discord.gg/rXdqsmGZ6q)
 ## Building (This may be changing soon)
 
 > If you plan to contribute to the project, please fork the master repo before cloning
