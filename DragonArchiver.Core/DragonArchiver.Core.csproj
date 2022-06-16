@@ -28,10 +28,12 @@
         <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\spells.json" />
         <AvaloniaResource Include="Resources\JsonData\WOTC_5e_SRD_v5.1\weapons.json" />
         <AvaloniaResource Include="Resources\LICENSE.md" />
-        <Folder Include="Data" />
         <Folder Include="Models\" />
         <AvaloniaResource Include="Assets\**" />
-        <AvaloniaResource Include="Data\**" />
+        <AvaloniaXaml Remove="Data\**" />
+        <Compile Remove="Data\**" />
+        <EmbeddedResource Remove="Data\**" />
+        <None Remove="Data\**" />
         <None Remove=".gitignore" />
     </ItemGroup>
     <ItemGroup>
@@ -49,49 +51,31 @@
         <PackageReference Include="Avalonia.ReactiveUI" Version="0.10.15" />
         <PackageReference Include="Avalonia.ReactiveUI.Events" Version="0.10.15" />
         <PackageReference Include="CppSharp" Version="1.0.1" />
-        <PackageReference Include="FluentValidation" Version="11.0.2" />
-        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.2" />
+        <PackageReference Include="FluentValidation" Version="11.0.3" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.3" />
         <PackageReference Include="JetBrains.Annotations" Version="2022.1.0" />
-        <PackageReference Include="JetBrains.ExternalAnnotations" Version="10.2.117" />
-        <PackageReference Include="Microsoft.ApplicationInsights" Version="2.21.0-beta1" />
-        <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.0-preview.4.22229.2" />
-        <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.0-preview.4.22229.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.0-preview.4.22229.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.0-preview.4.22229.2" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="2.0.0-preview1-final" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.0-preview.4.22229.2">
-          <PrivateAssets>all</PrivateAssets>
-          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-        </PackageReference>
-        <PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0-preview.4.22229.4" />
-        <PackageReference Include="Microsoft.JSInterop" Version="6.0.5" />
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.2-beta1" />
+        <PackageReference Include="JetBrains.ExternalAnnotations" Version="10.2.118" />
+        <PackageReference Include="Microsoft.ApplicationInsights" Version="2.20.0" />
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.6" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6" />
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+        <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+        <PackageReference Include="Microsoft.JSInterop" Version="6.0.6" />
+        <PackageReference Include="Moq" Version="4.18.1" />
         <PackageReference Include="ReactiveUI" Version="18.1.8" />
         <PackageReference Include="ReactiveUI.Fody" Version="18.1.8" />
         <PackageReference Include="ReactiveUI.Testing" Version="18.1.8" />
         <PackageReference Include="ReactiveUI.Validation" Version="2.2.1" />
+        <PackageReference Include="Serilog" Version="2.11.0" />
         <PackageReference Include="SQLite" Version="3.13.0" />
-        <PackageReference Include="System.Data.DataSetExtensions" Version="4.6.0-preview3.19128.7" />
-        <PackageReference Include="System.Drawing.Common" Version="7.0.0-preview.4.22229.4" />
+        <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
         <PackageReference Include="System.Linq" Version="4.3.0" />
         <PackageReference Include="System.Linq.Async" Version="6.0.1" />
-        <PackageReference Include="System.Threading.Channels" Version="7.0.0-preview.4.22229.4" />
+        <PackageReference Include="System.Net.Http" Version="4.3.4" />
+        <PackageReference Include="System.Text.Json" Version="6.0.5" />
+        <PackageReference Include="System.Threading.Channels" Version="6.0.0" />
         <PackageReference Include="XamlNameReferenceGenerator" Version="1.3.4" />
         <PackageReference Include="YamlDotNet" Version="11.2.1" />
-    </ItemGroup>
-    <ItemGroup>
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\aboleth.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\ankheg.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\basilisk.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\behir.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\bulette.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\chuul.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\cloaker.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\cockatrice.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\couatl.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\darkmantle.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\hezrou.png" />
-      <UpToDateCheckInput Remove="Data\ImageData\monsters\rust-monster.png" />
     </ItemGroup>
     <ItemGroup>
       <Compile Update="Samples\DirectAuthView.axaml.cs">
