@@ -11,9 +11,10 @@ DragonArchiver aims to enable both Game Masters and Players to understand better
 Some of the best ways to [contribute](.github/CONTRIBUTING.md) are to try things out, file issues, join in design conversations,
 and make pull requests. Proposals for changes specific to the Dragon Archiver can be found [here for discussion](https://github.com/WizWorksInc/DragonArchiver/issues).
 
-See [CONTRIBUTING](.github/CONTRIBUTING.md), [CODE-OF-CONDUCT](.github/CODE_OF_CONDUCT.md) and the [Development Guide](.github/DEVELOPMENT.md).
 
 ### Join our [discord!](https://discord.gg/rXdqsmGZ6q)
+
+See [CONTRIBUTING](.github/CONTRIBUTING.md), [CODE-OF-CONDUCT](.github/CODE_OF_CONDUCT.md) and the [Development Guide](.github/DEVELOPMENT.md).
 ## Building (This may be changing soon)
 
 > If you plan to contribute to the project, please fork the master repo before cloning
