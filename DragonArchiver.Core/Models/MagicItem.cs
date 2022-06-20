@@ -38,7 +38,7 @@ public class MagicItem
 
     public static async Task<IEnumerable<MagicItem>?> LoadContentListAsync()
     {
-        return await JsonListReader.LoadJsonAsync<MagicItem>(Resources.magicitems);
+        return await JsonHandler.LoadJsonAsync<IEnumerable<MagicItem>>(Resources.magicitems);
     }
     
 }

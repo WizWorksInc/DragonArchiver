@@ -35,7 +35,7 @@ public partial class MagicItemViewModel : BaseViewModel
     // Deserialize our magicitems.json into a IEnumerable so we can store it in an observable collection
     // This will help us later when calling the list for use
     private static readonly IEnumerable<MagicItem>? MagicItems =
-        JsonListReader.LoadJsonList<MagicItem>(Resources.magicitems);
+        JsonHandler.LoadJsonList<IEnumerable<MagicItem>>(Resources.magicitems);
 
     private ObservableCollection<MagicItem> _magicItemsList = new(MagicItems ?? Array.Empty<MagicItem>());
     public ObservableCollection<MagicItem> MagicItemsList

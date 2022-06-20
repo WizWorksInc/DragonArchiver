@@ -10,12 +10,12 @@ public class JsonListReaderUnitTests
     [Fact]
     public void CheckAllJsonFilesAndVerifyWorking()
     {
-        var monsterList = JsonListReader.LoadJsonList<Monster>(Resources.monsters)!;
-        var magicItemsList = JsonListReader.LoadJsonList<MagicItem>(Resources.magicitems)!;
-        var spellsList = JsonListReader.LoadJsonList<Spell>(Resources.spells)!;
-        var racesList = JsonListReader.LoadJsonList<Race>(Resources.races)!;
+        var monsterList = JsonHandler.LoadJsonList<IEnumerable<Monster>>(Resources.monsters)!;
+        var magicItemsList = JsonHandler.LoadJsonList< IEnumerable<MagicItem>>(Resources.magicitems)!;
+        var spellsList = JsonHandler.LoadJsonList< IEnumerable<Spell>>(Resources.spells)!;
+        var racesList = JsonHandler.LoadJsonList< IEnumerable<Race>>(Resources.races)!;
         
-        var testingList = JsonListReader.LoadJsonList<Monster>(Resources.monsters);
+        var testingList = JsonHandler.LoadJsonList< IEnumerable<Monster>>(Resources.monsters);
         
         Assert.NotEmpty(monsterList);
         Assert.NotEmpty(magicItemsList);
