@@ -1,4 +1,7 @@
 # Dragon Archiver
+> Dragon Archiver is currently on hiatus as I continue to improve my knowledge of .Net MAUI and Entity Framework.
+
+> Any contributions will be reviewed by myself though so feel free to send a pull!
 
 Dragon Archiver is a world creation and note-taking tool for tabletop role-playing games aimed at Games Master, Players, and even Historians!
 
